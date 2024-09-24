@@ -20,3 +20,16 @@ dependencyResolutionManagement {
 rootProject.name = "Accountability"
 
 include(":app")
+
+include("core:common")
+include("core:entities")
+include("core:data")
+include("core:interactors")
+include("core:view-models")
+include("core:local")
+include("core:remote")
+include("core:ui")
+
+include("feature:recording")
+include("feature:calling")
+include("feature:about")
