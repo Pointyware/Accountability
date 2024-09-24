@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffffff</color>
+    <color name="mute_white">#F2F2F2</color>
+    <color name="translucent">#00ffffff</color>
+    <color name="dark_overlay">#66191248</color>
+
+    <color name="color_911">#9F2323</color>
+
+    <!--  AI Color Swatch test  -->
+    <color name="primary">#03A9F4</color>
+    <color name="primaryLight">#72C1EB</color>
+    <color name="primaryLightest">#BEE9FF</color>
+    <color name="primaryDark">#004E73</color>
+    <color name="secondary">#C21E58</color>
+    <color name="secondaryLight">#EF8CB2</color>
+    <color name="surface">#E6E3C3</color>
+    <color name="onSurface">#191248</color>
+    <color name="surfaceDisabled">#F2F2F2</color>
+    <color name="onSurfaceDisabled">#191248</color>
+
+    <!--  Color Hooks  -->
+    <color name="view_background">@color/surface</color>
+    <color name="button_default">@color/white</color>
+    <color name="button_pressed">@color/secondaryLight</color>
+    <color name="button_focused">@color/secondaryLight</color>
+    <color name="button_disabled">@color/mute_white</color>
+
+    <color name="layout_background">@color/surface</color>
+
+    <!--  StorageView  -->
+    <color name="storage_unusable">@color/onSurface</color>
+    <color name="storage_videos">@color/secondaryLight</color>
+    <color name="storage_free">@color/primaryLightest</color>
+
+</resources>

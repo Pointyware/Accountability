@@ -1,0 +1,163 @@
+<resources>
+
+    <!--  Attributes that can be applied to all platforms  -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:textColorPrimary">@color/mute_white</item>
+        <item name="colorAccent">@color/secondaryLight</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="windowActionModeOverlay">true</item>
+
+        <!--    In-House Styles    -->
+        <item name="android:textViewStyle">@style/AppTheme.TextView</item>
+        <item name="cardViewStyle">@style/AppTheme.VideoCardView</item>
+        <item name="toolbarStyle">@style/AppTheme.Toolbar</item>
+        <item name="buttonStyle">@style/AppTheme.Button</item>
+        <item name="preferenceStyle">@style/AppTheme.Preference</item>
+
+        <!--  From Theme.AppCompat.Light.NoActionBar  -->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+        <!--  From Base.V7.Theme.AppCompat.Light  -->
+
+    </style>
+
+    <!-- Application theme -->
+    <style name="AppTheme" parent="BaseTheme">
+    </style>
+
+    <style name="AppTheme.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--  Main Activity  -->
+
+
+    <!--  About Activity  -->
+    <style name="AppTheme.About">
+        <item name="android:buttonStyle">@style/AppTheme.About.Buttons</item>
+    </style>
+
+    <style name="AppTheme.About.Buttons" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
+    </style>
+
+    <!--  Viewer Activity  -->
+
+    <!--  Universal Elements  -->
+    <style name="AppTheme.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+    <style name="AppTheme.VideoCardView" parent="CardView">
+        <item name="cardBackgroundColor">@color/mute_white</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/primaryDark</item>
+
+        <!--  From Widget.AppCompat.Toolbar  -->
+<!--        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>-->
+
+<!--        <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>-->
+<!--        <item name="editTextBackground">@drawable/abc_edit_text_material</item>-->
+<!--        <item name="editTextColor">?android:attr/textColorPrimary</item>-->
+<!--        <item name="autoCompleteTextViewStyle">@style/Widget.AppCompat.AutoCompleteTextView</item>-->
+<!--        <item name="android:textViewStyle">@style/Widget.AppCompat.TextView</item>-->
+
+        <!--  From Base.V7.Widget.AppCompat.Toolbar  -->
+<!--        <item name="titleTextAppearance">@style/TextAppearance.Widget.AppCompat.Toolbar.Title</item>-->
+<!--        <item name="subtitleTextAppearance">@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle</item>-->
+<!--        <item name="android:minHeight">?attr/actionBarSize</item>-->
+<!--        <item name="titleMargin">4dp</item>-->
+<!--        <item name="maxButtonHeight">@dimen/abc_action_bar_default_height_material</item>-->
+<!--        <item name="buttonGravity">top</item>-->
+<!--        <item name="collapseIcon">?attr/homeAsUpIndicator</item>-->
+<!--        <item name="collapseContentDescription">@string/abc_toolbar_collapse_description</item>-->
+<!--        <item name="contentInsetStart">16dp</item>-->
+<!--        <item name="contentInsetStartWithNavigation">@dimen/abc_action_bar_content_inset_with_nav</item>-->
+<!--        <item name="android:paddingLeft">@dimen/abc_action_bar_default_padding_start_material</item>-->
+<!--        <item name="android:paddingRight">@dimen/abc_action_bar_default_padding_end_material</item>-->
+
+        <!--  From Widget  -->
+<!--        <item name="textAppearance">?textAppearance</item>-->
+    </style>
+
+
+    <!-- From Parent theme: <item name="buttonStyle">@style/Widget.AppCompat.Button</item>-->
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textColor">@color/button_text</item>
+
+        <!--  From Base.Widget.AppCompat.Button  -->
+<!--        <item name="android:background">@drawable/abc_btn_default_mtrl_shape</item>-->
+<!--        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>-->
+<!--        <item name="android:minHeight">48dip</item>-->
+<!--        <item name="android:minWidth">88dip</item>-->
+<!--        <item name="android:focusable">true</item>-->
+<!--        <item name="android:clickable">true</item>-->
+<!--        <item name="android:gravity">center_vertical|center_horizontal</item>-->
+    </style>
+
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Dialog">
+
+<!--    From Base.V7.Theme.AppCompat.Dialog    -->
+<!--        <item name="android:colorBackground">?attr/colorBackgroundFloating</item>-->
+<!--        <item name="android:colorBackgroundCacheHint">@null</item>-->
+
+<!--        <item name="android:windowFrame">@null</item>-->
+<!--        <item name="android:windowTitleStyle">@style/RtlOverlay.DialogWindowTitle.AppCompat</item>-->
+<!--        <item name="android:windowTitleBackgroundStyle">@style/Base.DialogWindowTitleBackground.AppCompat</item>-->
+<!--        <item name="android:windowBackground">@drawable/abc_dialog_material_background</item>-->
+<!--        <item name="android:windowIsFloating">true</item>-->
+<!--        <item name="android:backgroundDimEnabled">true</item>-->
+<!--        <item name="android:windowContentOverlay">@null</item>-->
+<!--        <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>-->
+<!--        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>-->
+
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowActionModeOverlay">true</item>-->
+
+<!--        <item name="listPreferredItemPaddingLeft">24dip</item>-->
+<!--        <item name="listPreferredItemPaddingRight">24dip</item>-->
+
+<!--        <item name="android:listDivider">@null</item>-->
+
+<!--        <item name="android:buttonBarStyle">@style/Widget.AppCompat.ButtonBar.AlertDialog</item>-->
+<!--        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>-->
+<!--        <item name="android:windowCloseOnTouchOutside">true</item>-->
+    </style>
+
+    <style name="AppTheme.Preference" parent="Preference">
+
+        <item name="android:textColor">@color/primary</item>
+        <item name="titleTextColor">@color/primary</item>
+        <item name="android:background">@color/onSurface</item>
+        <item name="android:selectableItemBackground">@color/onSurface</item>
+<!--        <item name="android:colorBackground">@color/surface</item>-->
+    </style>
+
+    <style name="AppTheme.Permission.Item.TitleText" parent="TextAppearance.AppCompat.Display1">
+    </style>
+    <style name="AppTheme.Permission.Item.UseText" parent="TextAppearance.AppCompat.Body1">
+    </style>
+    <style name="AppTheme.Permission.Item.ManuallyEnableText" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textColor">@color/design_default_color_error</item>
+    </style>
+
+</resources>

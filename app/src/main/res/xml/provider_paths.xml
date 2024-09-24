@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="internal_videos"
+        path="." />
+    <external-files-path
+        name="external_videos"
+        path="." />
+<!--    <external-path-->
+<!--        name="external_videos"-->
+<!--        path="." />-->
+</paths>

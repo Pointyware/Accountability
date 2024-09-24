@@ -1,0 +1,131 @@
+<resources>
+
+    <string name="app_name">Accountability</string>
+
+    <!--  General  -->
+    <string name="button_confirm">Confirm</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_stop">Stop</string>
+    <string name="button_done">Done</string>
+    <string name="button_submit">Submit</string>
+    <string name="button_delete">Delete</string>
+
+    <!-- Main Activity -->
+    <string name="title_activity_main">Accountability</string>
+    <string name="title_settings">@string/label_settings_activity</string>
+
+    <!--  Settings Activity  -->
+    <string name="label_settings_activity">Settings</string>
+    <string name="toast_permissions_required">Permissions are required before recording can begin.</string>
+    <string name="summary_template_resolution">Camera will use %s resolution.</string>
+    <string name="summary_no_resolution">No resolution saved for camera.</string>
+
+    <string name="category_av">Audio/Video Settings</string>
+    <string name="title_video">Video Recording</string>
+    <string name="summary_video">Enable/Disable video.</string>
+    <string name="title_startup_camera">Startup Camera</string>
+    <string name="summary_startup_camera">Select which camera to use when recording begins.</string>
+    <string name="title_camera_resolution">Camera Resolution</string>
+    <string name="summary_camera_resolution">Choose the resolution of the selected camera.</string>
+    <string name="title_audio">Audio Recording</string>
+    <string name="summary_audio">Enable/Disable audio. Some areas are very strict about audio recording. Check your local laws.</string>
+
+    <string name="category_upload">Backup Options</string>
+    <string name="title_upload">Enable Backup</string>
+    <string name="summary_upload">Videos will be backed-up after recording.</string>
+    <string name="title_gdrive">Google Drive</string>
+    <string name="summary_gdrive_explainer">You will be prompted to allow this app to save files to your Google Drive.</string>
+    <string name="summary_gdrive_connected">Google Drive is connected as a backup point.</string>
+
+    <string name="category_calling">Calling Options</string>
+    <string name="title_enable_calling">Enable Calling</string>
+    <string name="summary_enable_calling">Allow calls while recording.</string>
+
+    <string name="title_emergency_contact">Emergency Contact</string>
+    <string name="summary_emergency_contact">Tap to select a contact.</string>
+    <string name="summary_emergency_contact_template">%s will be available to call while recording.</string>
+
+    <string name="title_call_on_start">Call on Start</string>
+    <string name="summary_call_on_start">When you start recording, your emergency contact will be called immediately.</string>
+
+    <string name="title_911_option">911 Option</string>
+    <string name="summary_911_option">Give the option while recording to call emergency services.</string>
+
+    <string name="category_location">Location Sharing</string>
+    <string name="title_location">Share with Contacts</string>
+    <string name="summary_location">Periodically share your current location with selected contacts.</string>
+    <string name="summary_location_template">Periodically share your current location with selected contacts: %s</string>
+    <string name="title_location_mode">Distance/Time Period</string>
+    <string name="summary_location_mode">Set how often you want to share your location.</string>
+
+    <string name="category_disguise">Notification Settings</string>
+    <string name="title_disguise">Disguise Notification</string>
+    <string name="summary_disguise">Disguise the background recording notification.</string>
+    <string name="title_notification">Notification Title</string>
+    <string name="title_message">Notification Message</string>
+    <string name="title_icon">Notification Icon</string>
+    <string name="title_controls">Hide Controls</string>
+    <string name="summary_controls">When enabled, the normal recording control won\'t be shown. You will need to open the preview to stop it.</string>
+
+    <string name="category_storage">Storage Settings</string>
+    <string name="title_storage_location">Location</string>
+    <string name="summary_storage_location">Current location: %s.</string>
+
+    <!-- About Activity -->
+    <string name="title_about">About</string>
+    <string name="about_feedback">Feedback</string>
+    <string name="about_rating">Please Rate Me!</string>
+    <string name="about_changes">Changelog</string>
+    <string name="about_share">Share</string>
+    <string name="acc_about_logo">Phone concealing eye</string>
+
+    <!--  Change Log Fragment  -->
+    <string name="title_change_log">Change Log</string>
+
+    <!-- Feedback Fragment -->
+    <string name="title_feedback">Feedback</string>
+    <string name="feedback_thanks">Thanks for the feedback! 👍</string>
+
+    <!-- Recording Service -->
+    <string name="label_service_recording">RECORD</string>
+    <!--  Error Messages  -->
+    <string name="error_resolution_unavailable">Could not retrieve list of camera output sizes. Please ensure your device is up to date.</string>
+    <string name="error_camera_manager_unavailable">Could not access system service: camera manager</string>
+    <string name="error_capture_manager_unavailable">Could not configure capture manager</string>
+
+    <!-- Viewer Activity -->
+    <string name="label_activity_recording">View</string>
+    <string name="video_preview_thumbnail">thumbnail</string>
+    <string name="label_connect_googledrive">Connect GoogleDrive</string>
+
+    <!--  Notifications  -->
+    <string name="title_recording_notification">Recording</string>
+    <string name="text_recording_notification">Currently recording in the background.</string>
+    <string name="description_recording_notification_channel">Delivered while background recording is active.</string>
+    <string name="name_recording_notification_channel">Background Recording</string>
+
+    <string name="title_permission_notification">Permissions Needed</string>
+    <string name="text_permission_notification">Permissions needed for recording.</string>
+    <string name="name_permission_notification_channel">Permissions</string>
+
+    <!-- Generated - should organize -->
+
+    <string-array name="camera_dummy_entries">
+        <item>Please select a camera</item>
+    </string-array>
+
+    <string name="description_widget_record">Camera Shutter</string>
+    <string name="message_permission_request_denied_too_many_times">You have denied this permission too many times. Tap here to open app settings to enable it manually.</string>
+    <string name="acc_permission_needed">Permission Needed</string>
+    <string name="acc_permission_granted">Permission Granted</string>
+    <string name="title_permissions_needed">Permissions Needed</string>
+    <string name="button_record">Record</string>
+    <string name="title_permission_camera">Camera</string>
+    <string name="desc_permission_camera">The camera is used while recording with video enabled.</string>
+    <string name="title_permission_audio">Microphone</string>
+    <string name="desc_permission_audio">The microphone is used while recording with audio enabled.</string>
+    <string name="title_permission_contacts">Contacts</string>
+    <string name="desc_permission_contacts">Your contacts are read while selecting a friend to call during emergencies.</string>
+    <string name="title_permission_phone">Phone Dialling</string>
+    <string name="desc_permission_phone">Phone dialling is used when you choose to call a friend during a recording.</string>
+</resources>
