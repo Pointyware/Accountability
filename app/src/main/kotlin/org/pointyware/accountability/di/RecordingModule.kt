@@ -19,8 +19,12 @@ import org.pointyware.accountability.settings.CameraOptionsManagerDataSource
 import org.pointyware.accountability.settings.ConfigurationRepository
 import org.pointyware.accountability.settings.LocationAndroidDataSource
 import org.pointyware.accountability.settings.LocationDataSource
+import org.pointyware.accountability.settings.SharedPreferencesAndroidDataSource
+import org.pointyware.accountability.settings.SharedPreferencesDataSource
 import org.pointyware.accountability.storage.ConfigurableFileProvider
 import org.pointyware.accountability.storage.FileProvider
+import org.pointyware.accountability.viewer.AndroidPreviewSurfaceProvider
+import org.pointyware.accountability.viewer.PreviewSurfaceProvider
 
 /**
  */
@@ -40,8 +44,8 @@ interface RecordingModule {
     fun getLocationDataSource(locationAndroidDataSource: LocationAndroidDataSource): LocationDataSource
     @Binds
     fun getCallingOptionsDataSource(callingOptionsAndroidDataSource: CallingOptionsAndroidDataSource): CallingOptionsDataSource
-//    @Binds
-//    fun getSharedPreferencesDataSource(sharedPreferencesAndroidDataSource: SharedPreferencesAndroidDataSource): SharedPreferencesDataSource
+    @Binds
+    fun getSharedPreferencesDataSource(sharedPreferencesAndroidDataSource: SharedPreferencesAndroidDataSource): SharedPreferencesDataSource
     @Binds
     fun getRecordingManager(cameraRecordingManager: CameraRecordingManager): RecordingManager
 //    @Binds
@@ -51,8 +55,8 @@ interface RecordingModule {
     @Binds
     fun getFileProvider(configurableFileProvider: ConfigurableFileProvider): FileProvider
 //
-//    @Binds
-//    fun getPreviewSurfaceProvider(androidPreviewSurfaceProvider: AndroidPreviewSurfaceProvider): PreviewSurfaceProvider
+    @Binds
+    fun getPreviewSurfaceProvider(androidPreviewSurfaceProvider: AndroidPreviewSurfaceProvider): PreviewSurfaceProvider
 //
 //    @Binds
 //    fun getPermissionVerifier(androidPermissionVerifier: AndroidPermissionVerifier): PermissionVerifier
