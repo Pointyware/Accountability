@@ -1,12 +1,10 @@
 package org.pointyware.accountability.settings
 
 import org.pointyware.accountability.storage.StorageLocation
-import org.pointyware.clean.Framework
 import javax.inject.Inject
 
 /**
  */
-@Framework
 class LocationAndroidDataSource @Inject constructor(
 
 ): LocationDataSource {
