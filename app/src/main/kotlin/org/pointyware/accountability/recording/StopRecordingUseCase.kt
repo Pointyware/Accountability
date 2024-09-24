@@ -1,6 +1,5 @@
 package org.pointyware.accountability.recording
 
-//import com.taushsampley.clean.Interactor
 import javax.inject.Inject
 
 /**
