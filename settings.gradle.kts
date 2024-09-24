@@ -28,6 +28,7 @@ include("core:interactors")
 include("core:view-models")
 include("core:local")
 include("core:remote")
+include("core:navigation")
 include("core:ui")
 
 include("feature:recording")
