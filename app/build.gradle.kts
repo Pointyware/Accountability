@@ -1,54 +1,56 @@
-//plugins {
-//    id 'com.android.application'
-//    id 'kotlin-android'
+plugins {
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.compose.compiler)
 //    id 'kotlin-kapt'
 //    id 'dagger.hilt.android.plugin'
-//}
-//
-//android {
-//    compileSdkVersion 32
-//
-//    viewBinding.enabled = true
-//
-//    defaultConfig {
-//        applicationId "com.taushsampley.accountability"
-//        minSdkVersion 21
-//        targetSdkVersion 32
-//        versionCode 1
-//        versionName "1.0"
-//
-//        testInstrumentationRunner "com.taushsampley.accountability.HiltTestRunner"
-//    }
-//
-//    buildTypes {
-//        release {
-//            minifyEnabled false
+}
+
+android {
+    namespace = "org.pointyware.accountability"
+//    compileSdkVersion = "34"
+
+    viewBinding.enable = true
+
+    defaultConfig {
+        minSdkVersion(21)
+        targetSdkVersion(35)
+        versionCode = 1
+        versionName = "1.0"
+
+//        testInstrumentationRunner = "com.taushsampley.accountability.HiltTestRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//        targetCompatibility JavaVersion.VERSION_1_8
-//    }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
-//    }
-//    packagingOptions {
-//        exclude 'META-INF/LICENSE*.md'
-//    }
-//    testOptions {
-//        unitTests {
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    packagingOptions {
+        exclude("META-INF/LICENSE*.md")
+    }
+    testOptions {
+        unitTests {
 //            includeAndroidResources = true
-//        }
-//    }
-//
-////    useLibrary 'android.test.runner'
+        }
+    }
+
+//    useLibrary 'android.test.runner'
 //
 //    useLibrary 'android.test.base'
 //    useLibrary 'android.test.mock'
-//}
-//
-//dependencies {
+}
+
+dependencies {
 //    implementation fileTree(dir: "libs", include: ["*.jar"])
 //
 //    def fragment_version = '1.4.1'
@@ -133,4 +135,4 @@
 //    androidTestImplementation 'org.mockito:mockito-android:4.5.1'
 //
 //    // endregion
-//}
+}
