@@ -7,6 +7,10 @@ plugins {
     alias(libs.plugins.hilt)
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 android {
     namespace = "org.pointyware.accountability"
     compileSdk = 35

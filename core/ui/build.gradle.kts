@@ -10,6 +10,7 @@ plugins {
 }
 
 kotlin {
+    jvmToolchain(17)
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     compilerOptions {
         apiVersion = KotlinVersion.KOTLIN_2_0
