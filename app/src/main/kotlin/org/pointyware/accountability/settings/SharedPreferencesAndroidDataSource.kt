@@ -8,6 +8,9 @@ import javax.inject.Inject
 class SharedPreferencesAndroidDataSource @Inject constructor(): SharedPreferencesDataSource {
 
     override suspend fun getRecordingConfiguration(): RecordingConfig {
-        TODO("Not yet implemented")
+        return RecordingConfig( // https://github.com/Pointyware/Accountability/issues/15
+            null,
+            null
+        )
     }
 }
