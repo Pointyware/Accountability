@@ -19,19 +19,19 @@ class ViewerViewModel @Inject constructor(
 ): ViewModel() {
 
     val callingEnabled: Boolean
-    get() = true // TODO: replace with config repo or use cases
+        get() = true // TODO: replace with config repo or use cases
 
     val friendEnabled: Boolean
-    get() = true // TODO: replace with config repo or use cases
+        get() = true // TODO: replace with config repo or use cases
 
     val contactNumber: String?
-    get() = ""
+        get() = ""
 
     val policeEnabled: Boolean
-    get() = true // TODO: replace with config repo or use cases
+        get() = true // TODO: replace with config repo or use cases
 
     val callOnStart: Boolean
-    get() = false // TODO: replace with config repo or use cases
+        get() = false // TODO: replace with config repo or use cases
 
     val policeNumber: String
     get() = ""
