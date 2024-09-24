@@ -8,11 +8,14 @@ import javax.inject.Inject
 class LocationAndroidDataSource @Inject constructor(
 
 ): LocationDataSource {
+
+    // TODO: use data store to persist/retrieve
+    private var location: StorageLocation = StorageLocation.External
     override fun getLocation(): StorageLocation {
-        TODO("Not yet implemented")
+        return location
     }
 
     override fun setLocation(location: StorageLocation) {
-        TODO("Not yet implemented")
+        this.location = location
     }
 }
