@@ -137,7 +137,7 @@ dependencies {
 }
 
 android {
-    namespace = "org.pointyware.placeholder.feature.recording"
+    namespace = "org.pointyware.accountability.feature.recording"
     compileSdk = 34
     defaultConfig {
         minSdk = 21

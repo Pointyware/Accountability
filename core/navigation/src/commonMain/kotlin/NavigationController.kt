@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.navigation
+package org.pointyware.accountability.core.navigation
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

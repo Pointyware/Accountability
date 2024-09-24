@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.entities
+package org.pointyware.accountability.core.entities
 
 import kotlin.experimental.and
 import kotlin.experimental.or

@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.ui.di
+package org.pointyware.accountability.core.ui.di
 
 import org.koin.core.component.KoinComponent
 

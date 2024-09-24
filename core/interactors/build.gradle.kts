@@ -73,7 +73,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.pointyware.placeholder.core.interactors"
+    namespace = "org.pointyware.accountability.core.interactors"
     compileSdk = 34
     defaultConfig {
         minSdk = 21

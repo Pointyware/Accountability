@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.common
+package org.pointyware.accountability.core.common
 
 /**
  *

@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.navigation
+package org.pointyware.accountability.core.navigation
 
 
 

@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.remote
+package org.pointyware.accountability.core.remote
 
 /**
  * Simulates a remote data source, i.e. a network API.

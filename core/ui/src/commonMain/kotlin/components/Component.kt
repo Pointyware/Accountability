@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.ui.components
+package org.pointyware.accountability.core.ui.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

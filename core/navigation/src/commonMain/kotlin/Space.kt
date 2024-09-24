@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.navigation
+package org.pointyware.accountability.core.navigation
 
 /**
  * Represents a space in an app or content graph.

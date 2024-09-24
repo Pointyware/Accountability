@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.navigation
+package org.pointyware.accountability.core.navigation
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable

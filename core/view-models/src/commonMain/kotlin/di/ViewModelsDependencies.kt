@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.viewmodels.di
+package org.pointyware.accountability.core.viewmodels.di
 
 import org.koin.core.component.KoinComponent
 

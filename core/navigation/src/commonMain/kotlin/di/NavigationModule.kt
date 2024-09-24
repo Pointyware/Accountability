@@ -1,9 +1,9 @@
-package org.pointyware.placeholder.core.navigation.di
+package org.pointyware.accountability.core.navigation.di
 
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
-import org.pointyware.placeholder.core.navigation.StackNavigationController
-import org.pointyware.placeholder.core.navigation.StackNavigationControllerImpl
+import org.pointyware.accountability.core.navigation.StackNavigationController
+import org.pointyware.accountability.core.navigation.StackNavigationControllerImpl
 
 /**
  *

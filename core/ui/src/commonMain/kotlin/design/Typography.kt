@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.ui.design
+package org.pointyware.accountability.core.ui.design
 
 /**
  * Defines typography for Placeholder

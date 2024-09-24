@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.remote
+package org.pointyware.accountability.core.remote
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp

@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.navigation
+package org.pointyware.accountability.core.navigation
 
 import kotlin.test.Test
 import kotlin.test.assertTrue

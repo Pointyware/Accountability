@@ -1,6 +1,6 @@
-package org.pointyware.placeholder.core.entities
+package org.pointyware.accountability.core.entities
 
-import org.pointyware.placeholder.assertions.assert
+import org.pointyware.accountability.assertions.assert
 import kotlin.experimental.and
 import kotlin.test.Test
 

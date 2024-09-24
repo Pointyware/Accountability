@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.ui
+package org.pointyware.accountability.core.ui
 
 import androidx.compose.ui.tooling.preview.Preview
 

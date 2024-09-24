@@ -1,4 +1,4 @@
-# Module org.pointyware.placeholder.core.navigation
+# Module org.pointyware.accountability.core.navigation
 This module defines the Placeholder navigation system.
 
 ## Design Criteria

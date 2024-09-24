@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.local.di
+package org.pointyware.accountability.core.local.di
 
 import org.koin.dsl.module
 

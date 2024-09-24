@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.data.di
+package org.pointyware.accountability.core.data.di
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

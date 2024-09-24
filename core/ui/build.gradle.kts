@@ -96,7 +96,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.pointyware.placeholder.core.ui"
+    namespace = "org.pointyware.accountability.core.ui"
     compileSdk = 34
     defaultConfig {
         minSdk = 21

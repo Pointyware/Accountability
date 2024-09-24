@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.viewmodels
+package org.pointyware.accountability.core.viewmodels
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

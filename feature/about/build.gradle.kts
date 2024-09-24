@@ -137,7 +137,7 @@ dependencies {
 }
 
 android {
-    namespace = "org.pointyware.placeholder.feature.about"
+    namespace = "org.pointyware.accountability.feature.about"
     compileSdk = 34
     defaultConfig {
         minSdk = 21

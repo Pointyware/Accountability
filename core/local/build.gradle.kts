@@ -73,7 +73,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.pointyware.placeholder.core.local"
+    namespace = "org.pointyware.accountability.core.local"
     compileSdk = 34
     defaultConfig {
         minSdk = 21

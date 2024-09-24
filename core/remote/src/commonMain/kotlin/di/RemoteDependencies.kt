@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.remote.di
+package org.pointyware.accountability.core.remote.di
 
 /**
  */

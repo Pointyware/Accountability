@@ -1,8 +1,8 @@
-package org.pointyware.placeholder.core.navigation.di
+package org.pointyware.accountability.core.navigation.di
 
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
-import org.pointyware.placeholder.core.navigation.StackNavigationController
+import org.pointyware.accountability.core.navigation.StackNavigationController
 
 /**
  *

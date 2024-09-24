@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.data
+package org.pointyware.accountability.core.data
 
 /**
  * In domain-driven design, a repository is a mechanism for encapsulating storage, retrieval, and search behavior which emulates a collection of objects.

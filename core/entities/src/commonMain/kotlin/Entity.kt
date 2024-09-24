@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.entities
+package org.pointyware.accountability.core.entities
 
 /**
  *

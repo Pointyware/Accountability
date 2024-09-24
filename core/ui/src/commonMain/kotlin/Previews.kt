@@ -1,4 +1,4 @@
-package org.pointyware.placeholder.core.ui
+package org.pointyware.accountability.core.ui
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import org.pointyware.placeholder.core.ui.Dimension.Companion.by
+import org.pointyware.accountability.core.ui.Dimension.Companion.by
 
 enum class UiMode {
     Light,
