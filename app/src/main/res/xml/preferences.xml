@@ -6,26 +6,26 @@
         android:title="Audio/Video Settings"
         app:iconSpaceReserved="false">
 
-        <com.taushsampley.accountability.permission.PermissionPreference
+        <org.pointyware.accountability.permission.PermissionPreference
             android:key="@string/pAVVideo"
             android:summary="@string/summary_video"
             android:title="@string/title_video"
             app:permission="android.permission.CAMERA"/>
-        <com.taushsampley.accountability.picture.CameraPreference
+        <org.pointyware.accountability.picture.CameraPreference
             android:icon="@drawable/ic_camera_pref"
             android:dependency="@string/pAVVideo"
             android:key="@string/pAVCamera"
             android:summary="@string/summary_startup_camera"
             android:title="@string/title_startup_camera" />
 
-        <com.taushsampley.accountability.picture.ResolutionPreference
+        <org.pointyware.accountability.picture.ResolutionPreference
             android:icon="@drawable/ic_camera_pref"
             android:dependency="@string/pAVCamera"
             android:key="@string/pAVCameraResolution"
             android:summary="@string/summary_camera_resolution"
             android:title="@string/title_camera_resolution" />
 
-        <com.taushsampley.accountability.permission.PermissionPreference
+        <org.pointyware.accountability.permission.PermissionPreference
             android:key="@string/pAVAudio"
             android:summary="@string/summary_audio"
             android:title="@string/title_audio"
@@ -42,7 +42,7 @@
 <!--            android:key="@string/pBackupEnabled"-->
 <!--            android:summary="@string/summary_upload"-->
 <!--            android:title="@string/title_upload" />-->
-<!--        <com.taushsampley.accountability.settings.backup.GDrivePreference-->
+<!--        <org.pointyware.accountability.settings.backup.GDrivePreference-->
 <!--            android:defaultValue="false"-->
 <!--            android:dependency="@string/pBackupEnabled"-->
 <!--            android:key="@string/pBackupGDrive"-->
@@ -53,7 +53,7 @@
         android:title="@string/category_calling"
         app:iconSpaceReserved="false">
 
-        <com.taushsampley.accountability.contact.ContactPreference
+        <org.pointyware.accountability.contact.ContactPreference
             android:icon="@drawable/ic_contact_pref"
             android:key="@string/pCallingContact"
             android:summary="@string/summary_emergency_contact"
@@ -116,7 +116,7 @@
         android:title="@string/category_storage"
         app:iconSpaceReserved="false" >
 
-        <com.taushsampley.accountability.storage.StoragePreference
+        <org.pointyware.accountability.storage.StoragePreference
             android:title="@string/title_storage_location"
             android:summary="@string/summary_storage_location"
             android:key="@string/pStorageLocation" />

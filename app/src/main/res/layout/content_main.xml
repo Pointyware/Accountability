@@ -7,7 +7,7 @@
     android:background="@color/layout_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-<!--    <com.taushsampley.accountability.storage.ui.StorageBar-->
+<!--    <org.pointyware.accountability.storage.ui.StorageBar-->
 <!--        android:id="@+id/storageBar"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="24dp"-->
