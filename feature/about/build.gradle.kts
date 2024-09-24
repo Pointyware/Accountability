@@ -25,7 +25,7 @@ kotlin {
 
             dependencies {
                 implementation(libs.androidx.composeTest)
-                debugImplementation(libs.androidx.composeManifest)
+                debugImplementation(libs.androidx.compose.manifest)
             }
         }
     }
