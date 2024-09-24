@@ -35,8 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    packagingOptions {
-        exclude("META-INF/LICENSE*.md")
+    packaging {
+        resources {
+            excludes.add("META-INF/LICENSE*.md")
+        }
     }
     testOptions {
         unitTests {
