@@ -1,9 +1,7 @@
 package org.pointyware.accountability.settings
 
 import org.pointyware.accountability.calling.CallingConfig
-import org.pointyware.clean.Adapter
 
-@Adapter
 interface CallingOptionsDataSource {
 
     val callingConfig: CallingConfig?

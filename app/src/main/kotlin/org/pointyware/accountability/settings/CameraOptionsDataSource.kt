@@ -2,12 +2,10 @@ package org.pointyware.accountability.settings
 
 import android.util.Size
 import org.pointyware.accountability.recording.VisualConfig
-import org.pointyware.clean.Adapter
 
 /**
  * Provides access to a variety of camera configuration options.
  */
-@Adapter
 interface CameraOptionsDataSource {
 
     val visualConfig: VisualConfig?
