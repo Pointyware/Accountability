@@ -9,7 +9,7 @@ class LocationAndroidDataSource @Inject constructor(
 
 ): LocationDataSource {
 
-    // TODO: use data store to persist/retrieve
+    // https://github.com/Pointyware/Accountability/issues/14
     private var location: StorageLocation = StorageLocation.External
     override fun getLocation(): StorageLocation {
         return location
