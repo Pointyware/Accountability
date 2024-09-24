@@ -8,6 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.pointyware.accountability.recording.StartRecordingUseCase
 import org.pointyware.accountability.recording.StopRecordingUseCase
+import org.pointyware.accountability.settings.ConfigurationRepository
 import javax.inject.Inject
 
 /**
@@ -16,7 +17,9 @@ import javax.inject.Inject
 class ViewerViewModel @Inject constructor(
     private val startRecordingUseCase: StartRecordingUseCase,
     private val stopRecordingUseCase: StopRecordingUseCase,
-): ViewModel() {
+    // TODO: inject make a call use case
+    private val configurationRepository: ConfigurationRepository
+) : ViewModel() {
 
     val callingEnabled: Boolean
         get() = true // TODO: replace with config repo or use cases
