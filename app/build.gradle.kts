@@ -3,15 +3,13 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.compose.compiler)
-//    id 'kotlin-kapt'
-//    id 'dagger.hilt.android.plugin'
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
     namespace = "org.pointyware.accountability"
     compileSdk = 35
-
-    viewBinding.enable = true
 
     defaultConfig {
         minSdk = 21
@@ -27,6 +25,12 @@ android {
             isMinifyEnabled = false
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    viewBinding.enable = true
+    buildFeatures {
+        compose = true
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -53,6 +57,26 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.ui)
+    implementation(projects.feature.about)
+    implementation(projects.feature.calling)
+    implementation(projects.feature.recording)
+
+    implementation(libs.timber)
+
+    implementation(libs.androidx.appCompat)
+    implementation(libs.androidx.activityKtx)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.preference)
+
+    // still need to include view-based material system
+    implementation(libs.google.material)
+
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+
+
+    debugImplementation(libs.androidx.compose.manifest)
 //    implementation fileTree(dir: "libs", include: ["*.jar"])
 //
 //    def fragment_version = '1.4.1'
