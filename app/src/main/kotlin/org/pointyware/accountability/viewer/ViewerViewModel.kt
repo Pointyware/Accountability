@@ -39,6 +39,9 @@ class ViewerViewModel @Inject constructor(
     val policeNumber: String
     get() = ""
 
+    /**
+     * Starts active recording.
+     */
     @RequiresPermission(Manifest.permission.CAMERA)
     fun startRecording() {
         viewModelScope.launch {
@@ -46,6 +49,9 @@ class ViewerViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Stops active recording.
+     */
     fun stopRecording() {
         viewModelScope.launch {
             stopRecordingUseCase()
