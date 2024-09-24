@@ -7,7 +7,6 @@ import dagger.hilt.components.SingletonComponent
 import org.pointyware.accountability.audio.AudioDao
 import org.pointyware.accountability.audio.AudioOptionsDataSource
 import org.pointyware.accountability.recording.AndroidRecordingRepository
-import org.pointyware.accountability.recording.LocalRecordingDao
 import org.pointyware.accountability.recording.RecordingManager
 import org.pointyware.accountability.recording.RecordingRepository
 import org.pointyware.accountability.recording.camera.CameraRecordingManager
