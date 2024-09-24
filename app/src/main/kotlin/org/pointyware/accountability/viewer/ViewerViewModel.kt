@@ -51,6 +51,27 @@ class ViewerViewModel @Inject constructor(
             stopRecordingUseCase()
         }
     }
+
+    /**
+     *
+     */
+    fun onViewerOpened() {
+        viewModelScope.launch {
+            /*
+            TODO: call on viewer opened
+            1. Get call on start state
+            2. If enabled, start call use case
+             */
+
+
+            /* if we should call on start - onStart would trigger a call
+            every time without storing state somehow. ew.
+             */
+//            if (viewModel.callOnStart) {
+//                startFriendlyCall()
+//            }
+        }
+    }
 }
 
 sealed interface CallButtonUiState {
