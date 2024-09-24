@@ -30,7 +30,8 @@ class CameraDeviceOpenerFactory @Inject constructor(
                 executor
             )
         } else {
-            val looperThread = HandlerThread("${javaClass.simpleName}-HandlerThread")
+            val simpleName = CameraDeviceOpenerFactory::class.simpleName
+            val looperThread = HandlerThread("${simpleName}-HandlerThread")
             val handler = looperThread.let {
                 it.start()
                 Handler(it.looper)
