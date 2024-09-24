@@ -23,8 +23,7 @@ class FileRecordingDao @Inject constructor(
                 fileSelector.directory()?.listFiles()?.map { file ->
                     Recording(
                         file,
-                        // TODO: get media information from each file to determine file type
-                        RecordingType.Video
+                        RecordingType.Video // https://github.com/Pointyware/Accountability/issues/13
                     )
                 } ?: throw IllegalStateException("Save location not accessible.")
             )
