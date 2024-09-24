@@ -104,7 +104,7 @@
 
 <!--        <provider-->
 <!--            android:name=".recording.RecordingProvider"-->
-<!--            android:authorities="com.taushsampley.accountability.fileprovider"-->
+<!--            android:authorities="org.pointyware.accountability.fileprovider"-->
 <!--            android:exported="false"-->
 <!--            android:grantUriPermissions="true">-->
 <!--            <meta-data-->

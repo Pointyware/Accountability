@@ -21,7 +21,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-//        testInstrumentationRunner = "com.taushsampley.accountability.HiltTestRunner"
+//        testInstrumentationRunner = "org.pointyware.accountability.HiltTestRunner"
     }
 
     buildTypes {
