@@ -49,3 +49,15 @@ class ViewerViewModel @Inject constructor(
         }
     }
 }
+
+sealed interface CallButtonUiState {
+    data object Disabled : CallButtonUiState
+    data class Enabled(
+        val number: String
+    ): CallButtonUiState
+}
+
+data class ViewerUiState(
+    val friendlyCallState: CallButtonUiState = CallButtonUiState.Disabled,
+    val emergencyCallState: CallButtonUiState = CallButtonUiState.Disabled,
+)
