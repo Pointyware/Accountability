@@ -7,6 +7,8 @@ import dagger.hilt.components.SingletonComponent
 import org.pointyware.accountability.audio.AudioDao
 import org.pointyware.accountability.audio.AudioOptionsDataSource
 import org.pointyware.accountability.recording.AndroidRecordingRepository
+import org.pointyware.accountability.recording.FileRecordingDao
+import org.pointyware.accountability.recording.LocalRecordingDao
 import org.pointyware.accountability.recording.RecordingManager
 import org.pointyware.accountability.recording.RecordingRepository
 import org.pointyware.accountability.recording.camera.CameraRecordingManager
@@ -49,8 +51,8 @@ interface RecordingModule {
     fun getRecordingManager(cameraRecordingManager: CameraRecordingManager): RecordingManager
 //    @Binds
 //    fun getNotificationOutput(notificationCoordinator: NotificationCoordinator): NotificationOutput
-//    @Binds
-//    fun getLocalRecordingDao(fileRecordingDao: FileRecordingDao): LocalRecordingDao
+    @Binds
+    fun getLocalRecordingDao(fileRecordingDao: FileRecordingDao): LocalRecordingDao
     @Binds
     fun getFileProvider(configurableFileProvider: ConfigurableFileProvider): FileProvider
 //
