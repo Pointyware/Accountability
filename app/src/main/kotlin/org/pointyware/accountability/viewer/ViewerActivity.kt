@@ -90,27 +90,27 @@ class ViewerActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
-//        Timber.v("onStart()")
+        Timber.v("onStart()")
         super.onStart()
     }
 
     override fun onResume() {
-//        Timber.v("onResume()")
+        Timber.v("onResume()")
         super.onResume()
     }
 
     override fun onPause() {
-//        Timber.v("onPause:")
+        Timber.v("onPause:")
         super.onPause()
     }
 
     override fun onStop() {
-//        Timber.v("onStop:")
+        Timber.v("onStop:")
         super.onStop()
     }
 
     override fun onDestroy() {
-//        Timber.v("onDestroy: ")
+        Timber.v("onDestroy: ")
         super.onDestroy()
     }
 
