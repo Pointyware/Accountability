@@ -11,11 +11,11 @@
     android:background="@color/layout_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-<!--    <org.pointyware.accountability.storage.ui.StorageBar-->
-<!--        android:id="@+id/storageBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="24dp"-->
-<!--        android:layout_margin="12dp" />-->
+    <org.pointyware.accountability.storage.ui.StorageBar
+        android:id="@+id/storageBar"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_margin="12dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videoRecycler"
