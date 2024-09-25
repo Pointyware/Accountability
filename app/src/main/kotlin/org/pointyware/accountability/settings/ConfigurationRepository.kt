@@ -37,7 +37,7 @@ interface ConfigurationRepository {
     suspend fun getStorageLocation(): StorageLocation
     suspend fun setStorageLocation(location: StorageLocation)
 
-    suspend fun getCallingConfiguration(): CallingConfig?
+    suspend fun getCallingConfiguration(): CallingConfig
     suspend fun setCallingEnabled(enabled: Boolean)
     suspend fun setEmergencyNumberEnabled(enabled: Boolean)
     suspend fun setEmergencyNumber(number: String)

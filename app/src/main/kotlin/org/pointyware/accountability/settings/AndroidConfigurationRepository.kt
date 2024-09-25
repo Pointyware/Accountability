@@ -58,7 +58,7 @@ class AndroidConfigurationRepository @Inject constructor(
         locationDataSource.setLocation(location)
     }
 
-    override suspend fun getCallingConfiguration(): CallingConfig? {
+    override suspend fun getCallingConfiguration(): CallingConfig {
         return callingOptionsDataSource.callingConfig
     }
 
