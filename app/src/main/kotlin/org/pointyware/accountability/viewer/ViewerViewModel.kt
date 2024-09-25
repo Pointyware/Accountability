@@ -105,10 +105,38 @@ class ViewerViewModel @Inject constructor(
 
     fun startFriendlyCall(number: String) {
         TODO("Not yet implemented")
+        /*
+
+    @Deprecated("Use StartCallUseCase instead",
+        ReplaceWith("StartCallUseCase.invoke(callAfterDial, number)"))
+    private fun startFriendlyCall() {
+        Timber.v("Calling Friend")
+
+        viewModel.contactNumber?.also {
+
+            startCall(true, it)
+
+        } ?: run {
+
+            // if no number saved, open dialer
+            startCall(false)
+        }
+    }
+         */
     }
 
     fun startEmergencyCall(number: String) {
         TODO("Not yet implemented")
+        /*
+
+    @Deprecated("Use StartCallUseCase instead",
+        ReplaceWith("StartCallUseCase.invoke(callAfterDial, number)"))
+    private fun startEmergencyCall() {
+        Timber.v("Dialing Emergency Services")
+
+        startCall(false, viewModel.policeNumber)
+    }
+         */
     }
 }
 
