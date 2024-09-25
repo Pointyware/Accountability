@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import org.pointyware.accountability.calling.StartCallUseCase
 import org.pointyware.accountability.recording.StartRecordingUseCase
 import org.pointyware.accountability.recording.StopRecordingUseCase
 import org.pointyware.accountability.settings.ConfigurationRepository
@@ -21,7 +22,7 @@ import javax.inject.Inject
 class ViewerViewModel @Inject constructor(
     private val startRecordingUseCase: StartRecordingUseCase,
     private val stopRecordingUseCase: StopRecordingUseCase,
-    // TODO: inject make a call use case
+    private val startCallUseCase: StartCallUseCase,
     private val configurationRepository: ConfigurationRepository
 ) : ViewModel() {
 
