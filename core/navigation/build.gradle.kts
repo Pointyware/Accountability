@@ -84,7 +84,7 @@ kotlin {
 
 android {
     namespace = "org.pointyware.accountability.core.navigation"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 21
     }

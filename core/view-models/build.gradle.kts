@@ -79,7 +79,7 @@ kotlin {
 
 android {
     namespace = "org.pointyware.accountability.core.viewmodels"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 21
     }

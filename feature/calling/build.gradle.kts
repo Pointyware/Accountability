@@ -143,7 +143,7 @@ dependencies {
 
 android {
     namespace = "org.pointyware.accountability.feature.calling"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 21
     }
