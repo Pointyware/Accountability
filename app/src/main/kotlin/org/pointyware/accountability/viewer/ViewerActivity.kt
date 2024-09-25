@@ -9,8 +9,12 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import org.pointyware.accountability.databinding.ContentRecordingBinding
 import timber.log.Timber
 
@@ -38,14 +42,16 @@ class ViewerActivity : AppCompatActivity() {
         policeCallButton = binding.policeCallButton
         previewImage = binding.recordingPreview
 
-        configureCallButtons()
-
-        /* if we should call on start - onStart would trigger a call
-        every time without storing state somehow. ew.
-         */
-        if (viewModel.callOnStart) {
-            startFriendlyCall()
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.configurationState.collect { state ->
+                    bindCallButtonToState(previewCallButton, state.friendlyCallState, viewModel::startFriendlyCall)
+                    bindCallButtonToState(policeCallButton, state.emergencyCallState, viewModel::startEmergencyCall)
+                }
+            }
         }
+
+        viewModel.onViewerOpened()
 
         // TODO: check for permissions
 //        PermissionChecker(this, audioDao, cameraDao, callingDao).ungrantedPermissions.let { permissions ->
@@ -63,6 +69,24 @@ class ViewerActivity : AppCompatActivity() {
 //                }.launch(permissions.toTypedArray())
 //            }
 //        }
+    }
+
+    private fun bindCallButtonToState(
+        button: FloatingActionButton,
+        state: CallButtonUiState,
+        callback: (number:String)->Unit
+    ) {
+        when (state) {
+            is CallButtonUiState.Enabled -> {
+                button.visibility = View.VISIBLE
+                button.setOnClickListener {
+                    callback(state.number)
+                }
+            }
+            is CallButtonUiState.Disabled -> {
+                button.visibility = View.GONE
+            }
+        }
     }
 
     override fun onStart() {
@@ -143,6 +167,8 @@ class ViewerActivity : AppCompatActivity() {
         startCall(false, viewModel.policeNumber)
     }
 
+    @Deprecated("Use StartCallUseCase instead",
+        ReplaceWith("StartCallUseCase.invoke(callAfterDial, number)"))
     private fun startCall(callAfterDial: Boolean, number: String = "") {
         val action = if (callAfterDial) { Intent.ACTION_CALL } else { Intent.ACTION_DIAL }
         val intent = Intent(action).apply {
