@@ -5,6 +5,10 @@ import androidx.annotation.RequiresPermission
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.pointyware.accountability.recording.StartRecordingUseCase
 import org.pointyware.accountability.recording.StopRecordingUseCase
@@ -38,6 +42,25 @@ class ViewerViewModel @Inject constructor(
 
     val policeNumber: String
     get() = ""
+
+    val configurationState: StateFlow<ViewerUiState> get() = flow {
+        configurationRepository.getCallingConfiguration()?.let { callingConfig ->
+            emit(
+                ViewerUiState(
+                    friendlyCallState = callingConfig.contactNumber?.let {
+                        CallButtonUiState.Enabled(it)
+                    } ?: CallButtonUiState.Disabled,
+                    emergencyCallState = callingConfig.emergencyNumber?.let {
+                        CallButtonUiState.Enabled(it)
+                    } ?: CallButtonUiState.Disabled
+                )
+            )
+        }
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.Eagerly,
+        ViewerUiState()
+    )
 
     /**
      * Starts active recording.
