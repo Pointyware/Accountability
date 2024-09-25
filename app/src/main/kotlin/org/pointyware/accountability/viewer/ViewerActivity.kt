@@ -31,8 +31,6 @@ class ViewerActivity : AppCompatActivity() {
 
     private val viewModel: ViewerViewModel by viewModels()
 
-    // region Activity/Lifecycle
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ContentRecordingBinding.inflate(layoutInflater)
@@ -88,31 +86,4 @@ class ViewerActivity : AppCompatActivity() {
             }
         }
     }
-
-    override fun onStart() {
-        Timber.v("onStart()")
-        super.onStart()
-    }
-
-    override fun onResume() {
-        Timber.v("onResume()")
-        super.onResume()
-    }
-
-    override fun onPause() {
-        Timber.v("onPause:")
-        super.onPause()
-    }
-
-    override fun onStop() {
-        Timber.v("onStop:")
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        Timber.v("onDestroy: ")
-        super.onDestroy()
-    }
-
-    // endregion
 }
