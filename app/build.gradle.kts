@@ -85,6 +85,7 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
     testImplementation(libs.mockk.android)
+    testImplementation(libs.kotlinx.coroutinesTest)
 //    implementation fileTree(dir: "libs", include: ["*.jar"])
 //
 //    def fragment_version = '1.4.1'
