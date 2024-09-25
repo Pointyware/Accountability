@@ -10,6 +10,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import org.pointyware.accountability.audio.AudioDao
 import org.pointyware.accountability.audio.AudioOptionsDataSource
+import org.pointyware.accountability.permission.AndroidPermissionRequestLauncher
+import org.pointyware.accountability.permission.PermissionRequestLauncher
+import org.pointyware.accountability.permission.PermissionVerifier
+import org.pointyware.accountability.permission.ui.AndroidPermissionVerifier
 import org.pointyware.accountability.recording.AndroidRecordingRepository
 import org.pointyware.accountability.recording.FileRecordingDao
 import org.pointyware.accountability.recording.LocalRecordingDao
@@ -59,12 +63,12 @@ interface RecordingModule {
     fun getLocalRecordingDao(fileRecordingDao: FileRecordingDao): LocalRecordingDao
     @Binds
     fun getFileProvider(configurableFileProvider: ConfigurableFileProvider): FileProvider
-//
+
     @Binds
     fun getPreviewSurfaceProvider(androidPreviewSurfaceProvider: AndroidPreviewSurfaceProvider): PreviewSurfaceProvider
-//
-//    @Binds
-//    fun getPermissionVerifier(androidPermissionVerifier: AndroidPermissionVerifier): PermissionVerifier
-//    @Binds
-//    fun getPermissionRequestLauncher(androidPermissionRequestLauncher: AndroidPermissionRequestLauncher): PermissionRequestLauncher
+
+    @Binds
+    fun getPermissionVerifier(androidPermissionVerifier: AndroidPermissionVerifier): PermissionVerifier
+    @Binds
+    fun getPermissionRequestLauncher(androidPermissionRequestLauncher: AndroidPermissionRequestLauncher): PermissionRequestLauncher
 }
