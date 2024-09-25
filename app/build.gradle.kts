@@ -81,6 +81,10 @@ dependencies {
 
 
     debugImplementation(libs.androidx.compose.manifest)
+
+    testImplementation(libs.junit4)
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockk.android)
 //    implementation fileTree(dir: "libs", include: ["*.jar"])
 //
 //    def fragment_version = '1.4.1'
