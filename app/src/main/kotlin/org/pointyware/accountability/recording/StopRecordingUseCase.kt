@@ -5,7 +5,6 @@ import javax.inject.Inject
 /**
  *
  */
-//@Interactor
 class StopRecordingUseCase @Inject constructor(
     private val recordingManager: RecordingManager,
     private val recordingRepository: RecordingRepository
