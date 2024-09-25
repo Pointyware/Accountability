@@ -60,11 +60,11 @@
             android:title="@string/title_emergency_contact"
             app:permission="android.permission.READ_CONTACTS"/>
 
-<!--        <SwitchPreference-->
-<!--            android:icon="@drawable/ic_call_on_start_pref"-->
-<!--            android:key="@string/pCallingOnStart"-->
-<!--            android:summary="@string/summary_call_on_start"-->
-<!--            android:title="@string/title_call_on_start" />-->
+        <SwitchPreference
+            android:icon="@drawable/ic_call_on_start_pref"
+            android:key="@string/pCallingOnStart"
+            android:summary="@string/summary_call_on_start"
+            android:title="@string/title_call_on_start" />
 
         <SwitchPreference
             android:icon="@drawable/ic_911_pref"
