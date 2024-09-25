@@ -97,6 +97,8 @@
     <string name="label_activity_recording">View</string>
     <string name="video_preview_thumbnail">thumbnail</string>
     <string name="label_connect_googledrive">Connect GoogleDrive</string>
+    <string name="call_police_content_description">Call the police</string>
+    <string name="call_friend_content_description">Call a friend</string>
 
     <!--  Notifications  -->
     <string name="title_recording_notification">Recording</string>

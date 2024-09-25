@@ -25,6 +25,7 @@
             android:backgroundTint="@color/color_911"
             android:clickable="true"
             android:focusable="true"
+            android:contentDescription="@string/call_police_content_description"
             app:srcCompat="@drawable/ic_911_fab" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,6 +38,7 @@
             android:backgroundTint="@color/primary"
             android:clickable="true"
             android:focusable="true"
+            android:contentDescription="@string/call_friend_content_description"
             android:src="@drawable/ic_call_fab" />
     </LinearLayout>
 
