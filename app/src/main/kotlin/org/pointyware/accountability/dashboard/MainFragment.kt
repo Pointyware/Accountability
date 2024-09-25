@@ -3,7 +3,13 @@ package org.pointyware.accountability.dashboard
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,13 +19,12 @@ import androidx.recyclerview.selection.OnItemActivatedListener
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StorageStrategy
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import org.pointyware.accountability.R
+import org.pointyware.accountability.about.AboutActivity
 import org.pointyware.accountability.databinding.ContentMainBinding
 import org.pointyware.accountability.recording.Recording
 import org.pointyware.accountability.settings.SettingsActivity
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import org.pointyware.accountability.about.AboutActivity
 import timber.log.Timber
 
 /**

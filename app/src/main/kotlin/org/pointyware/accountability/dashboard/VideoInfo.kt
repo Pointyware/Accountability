@@ -2,7 +2,6 @@ package org.pointyware.accountability.dashboard
 
 import androidx.recyclerview.selection.ItemDetailsLookup
 import org.pointyware.accountability.recording.Recording
-import org.pointyware.clean.Entity
 
 /**
  */
