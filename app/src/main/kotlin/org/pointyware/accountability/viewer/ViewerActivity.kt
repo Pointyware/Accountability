@@ -117,6 +117,7 @@ class ViewerActivity : AppCompatActivity() {
     // endregion
 
     private fun configureCallButtons() {
+        // TODO: migrate sync properties to StateFlow; bind button visibility to StateFlow
         // setup preview surface
         if (viewModel.callingEnabled) {
             Timber.v("Calling Enabled")
