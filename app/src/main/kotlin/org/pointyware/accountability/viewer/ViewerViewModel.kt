@@ -101,6 +101,14 @@ class ViewerViewModel @Inject constructor(
 //            }
         }
     }
+
+    fun startFriendlyCall(number: String) {
+        TODO("Not yet implemented")
+    }
+
+    fun startEmergencyCall(number: String) {
+        TODO("Not yet implemented")
+    }
 }
 
 sealed interface CallButtonUiState {
