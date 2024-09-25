@@ -14,13 +14,16 @@ import androidx.core.content.FileProvider
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.selection.OnItemActivatedListener
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StorageStrategy
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import org.pointyware.accountability.R
 import org.pointyware.accountability.about.AboutActivity
 import org.pointyware.accountability.databinding.ContentMainBinding
@@ -83,17 +86,19 @@ class MainFragment: Fragment(R.layout.content_main), MenuProvider {
 
         tracker.onRestoreInstanceState(savedInstanceState)
 
-        lifecycleScope.launchWhenResumed {
-            historyViewModel.storageUsed.collect {
-                binding.storageBar.videos = it
-            }
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                historyViewModel.storageUsed.collect {
+                    binding.storageBar.videos = it
+                }
 
-            historyViewModel.recordingList.collect {
-                // TODO: keep reference to each type supporting selection and update here
-                itemActivatedListener.recordingList = it
-                keyProvider.recordingList = it
-                listAdapter.recordingList = it
-                listAdapter.notifyDataSetChanged() // TODO: use diff-util
+                historyViewModel.recordingList.collect {
+                    // TODO: keep reference to each type supporting selection and update here
+                    itemActivatedListener.recordingList = it
+                    keyProvider.recordingList = it
+                    listAdapter.recordingList = it
+                    listAdapter.notifyDataSetChanged() // TODO: use diff-util
+                }
             }
         }
         updateStorageBar()
