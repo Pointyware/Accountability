@@ -76,24 +76,6 @@ class ViewerViewModel @Inject constructor(
                 }
             }
         }
-        /*
-        TODO: request permissions
-        PermissionChecker(this, audioDao, cameraDao, callingDao).ungrantedPermissions.let { permissions ->
-            if (permissions.isNotEmpty()) {
-                registerForActivityResult(
-                    ActivityResultContracts.RequestMultiplePermissions()
-                ) { grantMap ->
-                    if (grantMap.filterValues { isEnabled -> !isEnabled }.isNotEmpty()) {
-                        Timber.e("Some permissions were not granted. Can't start recording.")
-                        // TODO: if a permission is denied once (possibly on accident) the system will not ask the user again and just deny the request. This causes the app to close immediately. Present dialog explaining the necessary permission, so it closes only after user acknowledgement
-                        finish()
-                    } else {
-//                        bindServiceAndPreview() TODO: retrieve preview surface and start presenting images from video
-                    }
-                }.launch(permissions.toTypedArray())
-            }
-        }
-         */
     }
 
     fun startFriendlyCall(number: String) {
