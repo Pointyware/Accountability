@@ -27,24 +27,6 @@ class ViewerViewModel @Inject constructor(
     private val configurationRepository: ConfigurationRepository
 ) : ViewModel() {
 
-    val callingEnabled: Boolean
-        get() = true // TODO: replace with config repo or use cases
-
-    val friendEnabled: Boolean
-        get() = true // TODO: replace with config repo or use cases
-
-    val contactNumber: String?
-        get() = ""
-
-    val policeEnabled: Boolean
-        get() = true // TODO: replace with config repo or use cases
-
-    val callOnStart: Boolean
-        get() = false // TODO: replace with config repo or use cases
-
-    val policeNumber: String
-    get() = ""
-
     val configurationState: StateFlow<ViewerUiState> get() = flow {
         configurationRepository.getCallingConfiguration()?.let { callingConfig ->
             emit(
@@ -101,6 +83,7 @@ class ViewerViewModel @Inject constructor(
 //            if (viewModel.callOnStart) {
 //                startFriendlyCall()
 //            }
+
         }
     }
 
