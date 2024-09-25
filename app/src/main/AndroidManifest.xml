@@ -68,14 +68,14 @@
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name=".about.AboutActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme.About">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.SHOW_APP_INFO" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+        <activity
+            android:name=".about.AboutActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.About">
+            <intent-filter>
+                <action android:name="android.intent.action.SHOW_APP_INFO" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".viewer.ViewerActivity"
             android:exported="true"

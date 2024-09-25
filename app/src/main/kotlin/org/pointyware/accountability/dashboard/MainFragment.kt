@@ -14,12 +14,12 @@ import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StorageStrategy
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.pointyware.accountability.R
-import org.pointyware.accountability.about.AboutActivity
 import org.pointyware.accountability.databinding.ContentMainBinding
 import org.pointyware.accountability.recording.Recording
 import org.pointyware.accountability.settings.SettingsActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import org.pointyware.accountability.about.AboutActivity
 import timber.log.Timber
 
 /**
