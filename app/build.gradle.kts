@@ -76,6 +76,8 @@ dependencies {
     implementation(libs.androidx.activityKtx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.preference)
+    implementation(libs.androidx.recyclerView)
+    implementation(libs.androidx.recyclerViewSelection)
 
     // still need to include view-based material system
     implementation(libs.google.material)
