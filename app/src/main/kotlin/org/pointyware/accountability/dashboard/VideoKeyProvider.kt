@@ -2,11 +2,9 @@ package org.pointyware.accountability.dashboard
 
 import androidx.recyclerview.selection.ItemKeyProvider
 import org.pointyware.accountability.recording.Recording
-import org.pointyware.clean.Framework
 
 /**
  */
-@Framework
 class VideoKeyProvider(
     var recordingList: List<Recording> = emptyList()
 ): ItemKeyProvider<String>(SCOPE_MAPPED) {

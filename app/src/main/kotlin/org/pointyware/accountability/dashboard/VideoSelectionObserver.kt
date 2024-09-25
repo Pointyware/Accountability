@@ -5,12 +5,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.selection.SelectionTracker
 import org.pointyware.accountability.R
-import org.pointyware.clean.Framework
 import timber.log.Timber
 
 /**
  */
-@Framework
 class VideoSelectionObserver(
     private val selectionTracker: SelectionTracker<String>,
     private val fragment: MainFragment,

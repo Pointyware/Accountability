@@ -3,11 +3,9 @@ package org.pointyware.accountability.dashboard
 import androidx.recyclerview.selection.ItemDetailsLookup
 import org.pointyware.accountability.recording.Recording
 import org.pointyware.clean.Entity
-import org.pointyware.clean.Framework
 
 /**
  */
-@Framework
 data class VideoDetails(
     private val position: Int,
     private val recording: Recording

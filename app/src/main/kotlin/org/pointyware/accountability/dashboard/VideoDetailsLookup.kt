@@ -3,11 +3,9 @@ package org.pointyware.accountability.dashboard
 import android.view.MotionEvent
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.widget.RecyclerView
-import org.pointyware.clean.Framework
 
 /**
  */
-@Framework
 class VideoDetailsLookup(
     private val videoRecycler: RecyclerView
 ): ItemDetailsLookup<String>() {

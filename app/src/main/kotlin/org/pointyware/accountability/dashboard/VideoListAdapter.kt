@@ -6,11 +6,9 @@ import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.RecyclerView
 import org.pointyware.accountability.R
 import org.pointyware.accountability.recording.Recording
-import org.pointyware.clean.Framework
 
 /**
  */
-@Framework
 class VideoListAdapter(
     var recordingList: List<Recording>
 ) : RecyclerView.Adapter<VideoHolder>() {
