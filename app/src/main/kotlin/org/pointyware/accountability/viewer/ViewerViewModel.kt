@@ -14,6 +14,7 @@ import org.pointyware.accountability.calling.StartCallUseCase
 import org.pointyware.accountability.recording.StartRecordingUseCase
 import org.pointyware.accountability.recording.StopRecordingUseCase
 import org.pointyware.accountability.settings.ConfigurationRepository
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -104,39 +105,21 @@ class ViewerViewModel @Inject constructor(
     }
 
     fun startFriendlyCall(number: String) {
-        TODO("Not yet implemented")
-        /*
-
-    @Deprecated("Use StartCallUseCase instead",
-        ReplaceWith("StartCallUseCase.invoke(callAfterDial, number)"))
-    private fun startFriendlyCall() {
         Timber.v("Calling Friend")
-
-        viewModel.contactNumber?.also {
-
-            startCall(true, it)
-
-        } ?: run {
-
-            // if no number saved, open dialer
-            startCall(false)
+        viewModelScope.launch {
+            if (number.isNotBlank()) {
+                startCallUseCase.invoke(true, number)
+            } else {
+                startCallUseCase.invoke(false)
+            }
         }
-    }
-         */
     }
 
     fun startEmergencyCall(number: String) {
-        TODO("Not yet implemented")
-        /*
-
-    @Deprecated("Use StartCallUseCase instead",
-        ReplaceWith("StartCallUseCase.invoke(callAfterDial, number)"))
-    private fun startEmergencyCall() {
         Timber.v("Dialing Emergency Services")
-
-        startCall(false, viewModel.policeNumber)
-    }
-         */
+        viewModelScope.launch {
+            startCallUseCase.invoke(false, number)
+        }
     }
 }
 
