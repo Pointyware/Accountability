@@ -7,7 +7,6 @@ import android.net.Uri
 import android.provider.ContactsContract
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
-import org.pointyware.clean.Framework
 
 /**
  * Very similar to [ActivityResultContracts.PickContact] which uses [ContactsContract.Contacts.CONTENT_TYPE]
