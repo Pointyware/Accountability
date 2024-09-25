@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  These are preference keys. Changing these would effectively forget user preferences.  -->
+
+    <!--  Audio/Video Keys  -->
+    <string name="pAVVideo">avPermissions</string>
+    <string name="pAVCamera">avCamera</string>
+    <string name="pAVCameraResolution">avResolution</string>
+    <string name="pAVAudio">avAudio</string>
+
+    <!--  Calling Keys  -->
+    <string name="pCallingContact">callingContact</string>
+    <string name="pCallingOnStart">callingOnStart</string>
+    <string name="pCallingEmergency">callingEmergency</string>
+
+    <!--  Backup Keys  -->
+    <string name="pBackupEnabled">backupEnabled</string>
+    <string name="pBackupGDrive">backupGDrive</string>
+    <!--  Location Keys  -->
+    <string name="pLocationEnabled">locationEnabled</string>
+    <string name="pLocationUpdate">locationUpdate</string>
+
+    <!--  Notification Disguise Keys  -->
+    <string name="pDisguiseEnabled">disguiseEnabled</string>
+    <string name="pDisguiseTitle">disguiseTitle</string>
+    <string name="pDisguiseMessage">disguiseMessage</string>
+    <string name="pDisguiseIcon">disguiseIcon</string>
+    <string name="pDisguiseControl">disguiseControl</string>
+
+    <!--  Storage Keys  -->
+    <string name="pStorageLocation">storageLocation</string>
+</resources>

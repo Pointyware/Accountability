@@ -1,0 +1,31 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="clear_contact_size">24dp</dimen>
+
+    <dimen name="margin_tiny">12dp</dimen>
+    <dimen name="margin_small">24dp</dimen>
+    <dimen name="margin_medium">36dp</dimen>
+
+    <dimen name="corner_radius_small">8dp</dimen>
+    <dimen name="about_border_thickness">2dp</dimen>
+    <dimen name="button_elevation">24dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
+
+    <!--  content_main  -->
+    <dimen name="main_progress_height">24dp</dimen>
+
+    <!--  item_video values  -->
+    <dimen name="item_video_text_view_margin">16dp</dimen>
+
+    <dimen name="item_video_card_view_elevation">8dp</dimen>
+    <dimen name="item_video_card_view_elevation_max">12dp</dimen>
+    <dimen name="item_video_card_view_margin">16dp</dimen>
+    <dimen name="item_video_card_view_corner_radius">8dp</dimen>
+
+</resources>

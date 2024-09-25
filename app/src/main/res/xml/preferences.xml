@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Audio/Video Settings"
+        app:iconSpaceReserved="false">
+
+        <org.pointyware.accountability.permission.PermissionPreference
+            android:key="@string/pAVVideo"
+            android:summary="@string/summary_video"
+            android:title="@string/title_video"
+            app:permission="android.permission.CAMERA"/>
+        <org.pointyware.accountability.picture.CameraPreference
+            android:icon="@drawable/ic_camera_pref"
+            android:dependency="@string/pAVVideo"
+            android:key="@string/pAVCamera"
+            android:summary="@string/summary_startup_camera"
+            android:title="@string/title_startup_camera" />
+
+        <org.pointyware.accountability.picture.ResolutionPreference
+            android:icon="@drawable/ic_camera_pref"
+            android:dependency="@string/pAVCamera"
+            android:key="@string/pAVCameraResolution"
+            android:summary="@string/summary_camera_resolution"
+            android:title="@string/title_camera_resolution" />
+
+        <org.pointyware.accountability.permission.PermissionPreference
+            android:key="@string/pAVAudio"
+            android:summary="@string/summary_audio"
+            android:title="@string/title_audio"
+            app:permission="android.permission.RECORD_AUDIO" />
+
+    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/category_upload"-->
+<!--        app:iconSpaceReserved="false">-->
+
+<!--        <SwitchPreference-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:key="@string/pBackupEnabled"-->
+<!--            android:summary="@string/summary_upload"-->
+<!--            android:title="@string/title_upload" />-->
+<!--        <org.pointyware.accountability.settings.backup.GDrivePreference-->
+<!--            android:defaultValue="false"-->
+<!--            android:dependency="@string/pBackupEnabled"-->
+<!--            android:key="@string/pBackupGDrive"-->
+<!--            android:summary="@string/summary_gdrive_explainer"-->
+<!--            android:title="@string/title_gdrive" />-->
+<!--    </PreferenceCategory>-->
+    <PreferenceCategory
+        android:title="@string/category_calling"
+        app:iconSpaceReserved="false">
+
+        <org.pointyware.accountability.contact.ContactPreference
+            android:icon="@drawable/ic_contact_pref"
+            android:key="@string/pCallingContact"
+            android:summary="@string/summary_emergency_contact"
+            android:title="@string/title_emergency_contact"
+            app:permission="android.permission.READ_CONTACTS"/>
+
+        <SwitchPreference
+            android:icon="@drawable/ic_call_on_start_pref"
+            android:key="@string/pCallingOnStart"
+            android:summary="@string/summary_call_on_start"
+            android:title="@string/title_call_on_start" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_911_pref"
+            android:key="@string/pCallingEmergency"
+            android:summary="@string/summary_911_option"
+            android:title="@string/title_911_option" />
+
+    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/category_location"-->
+<!--        app:iconSpaceReserved="false">-->
+
+<!--        <SwitchPreference-->
+<!--            android:summary="@string/summary_location"-->
+<!--            android:title="Check box preference" />-->
+<!--        <Preference-->
+<!--            android:title="@string/title_location_mode"-->
+<!--            android:summary="@string/summary_location_mode" />-->
+<!--    </PreferenceCategory>-->
+
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/category_disguise"-->
+<!--        app:iconSpaceReserved="false">-->
+<!--        <SwitchPreference-->
+<!--            android:title="@string/title_disguise"-->
+<!--            android:summary="@string/summary_disguise"-->
+<!--            android:key="@string/pDisguiseEnabled" />-->
+<!--        <Preference-->
+<!--            android:title="@string/title_notification"-->
+<!--            android:key="@string/pDisguiseTitle"-->
+<!--            app:iconSpaceReserved="false"/>-->
+<!--        <Preference-->
+<!--            android:title="@string/title_message"-->
+<!--            android:key="@string/pDisguiseMessage"-->
+<!--            app:iconSpaceReserved="false" />-->
+<!--        <Preference-->
+<!--            android:title="@string/title_icon"-->
+<!--            android:key="@string/pDisguiseIcon"-->
+<!--            app:iconSpaceReserved="false" />-->
+<!--        <SwitchPreference-->
+<!--            android:title="@string/title_controls"-->
+<!--            android:summary="@string/summary_controls"-->
+<!--            android:key="@string/pDisguiseControl"-->
+<!--            app:iconSpaceReserved="false" />-->
+
+<!--    </PreferenceCategory>-->
+
+    <PreferenceCategory
+        android:title="@string/category_storage"
+        app:iconSpaceReserved="false" >
+
+        <org.pointyware.accountability.storage.StoragePreference
+            android:title="@string/title_storage_location"
+            android:summary="@string/summary_storage_location"
+            android:key="@string/pStorageLocation" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
