@@ -1,3 +1,7 @@
+<!--
+  ~ Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+  -->
+
 <resources>
 
     <!-- Declare custom theme attributes that allow changing which styles are
