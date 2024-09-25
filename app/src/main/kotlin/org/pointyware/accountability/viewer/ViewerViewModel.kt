@@ -106,6 +106,12 @@ sealed interface CallButtonUiState {
     data class Enabled(
         val number: String
     ): CallButtonUiState
+
+    companion object {
+        fun String?.toCallButtonUiState(): CallButtonUiState {
+            return this?.let { Enabled(it) } ?: Disabled
+        }
+    }
 }
 
 data class ViewerUiState(
