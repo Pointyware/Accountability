@@ -1,12 +1,8 @@
 package org.pointyware.accountability.viewer
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -16,7 +12,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.pointyware.accountability.databinding.ContentRecordingBinding
-import timber.log.Timber
 
 /**
  * This activity can be started at any time. If a recording is taking place, it should show the
@@ -50,23 +45,6 @@ class ViewerActivity : AppCompatActivity() {
         }
 
         viewModel.onViewerOpened()
-
-        // TODO: check for permissions
-//        PermissionChecker(this, audioDao, cameraDao, callingDao).ungrantedPermissions.let { permissions ->
-//            if (permissions.isNotEmpty()) {
-//                registerForActivityResult(
-//                    ActivityResultContracts.RequestMultiplePermissions()
-//                ) { grantMap ->
-//                    if (grantMap.filterValues { isEnabled -> !isEnabled }.isNotEmpty()) {
-//                        Timber.e("Some permissions were not granted. Can't start recording.")
-//                        // TODO: if a permission is denied once (possibly on accident) the system will not ask the user again and just deny the request. This causes the app to close immediately. Present dialog explaining the necessary permission, so it closes only after user acknowledgement
-//                        finish()
-//                    } else {
-////                        bindServiceAndPreview() TODO: retrieve preview surface and start presenting images from video
-//                    }
-//                }.launch(permissions.toTypedArray())
-//            }
-//        }
     }
 
     private fun bindCallButtonToState(
