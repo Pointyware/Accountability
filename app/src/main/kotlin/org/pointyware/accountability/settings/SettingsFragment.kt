@@ -72,7 +72,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var permissionPreferences: Array<PermissionPreference>
 
     private lateinit var pickContactLauncher: ActivityResultLauncher<Unit>
-//    private lateinit var gDriveLauncher: ActivityResultLauncher<Void>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Array<String>>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -132,6 +131,13 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        /*
+        TODO: Clean up SettingsFragment/ViewModel
+          1. Define SettingsUiState
+          2. Expose in SettingsViewModel
+          3. Bind to Preferences
+         */
 
         videoPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
 
