@@ -11,6 +11,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.FileProvider
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -30,7 +31,7 @@ import timber.log.Timber
 /**
  */
 @AndroidEntryPoint
-class MainFragment: Fragment(R.layout.content_main) {
+class MainFragment: Fragment(R.layout.content_main), MenuProvider {
 
     private lateinit var binding: ContentMainBinding
 
@@ -39,6 +40,11 @@ class MainFragment: Fragment(R.layout.content_main) {
     private lateinit var itemActivatedListener: ItemActivationListener
     private lateinit var keyProvider: VideoKeyProvider
     private lateinit var tracker: SelectionTracker<String>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -98,12 +104,12 @@ class MainFragment: Fragment(R.layout.content_main) {
         tracker.onSaveInstanceState(outState)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main, menu)
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.main, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when (menuItem.itemId) {
             R.id.menu_item_settings -> {
                 val intent = Intent(requireActivity(), SettingsActivity::class.java)
                 // add parameters?
@@ -115,7 +121,7 @@ class MainFragment: Fragment(R.layout.content_main) {
                 startActivity(intent)
                 true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> false
         }
     }
 

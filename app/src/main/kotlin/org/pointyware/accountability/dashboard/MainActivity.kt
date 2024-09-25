@@ -19,9 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar_main))
 
+        val fragment = MainFragment()
+        addMenuProvider(fragment)
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, MainFragment())
+            .replace(R.id.fragment_container, fragment)
             .commit()
     }
 }
