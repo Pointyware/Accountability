@@ -6,8 +6,9 @@ package org.pointyware.accountability.recording
 
 /**
  * Configuration for audio of a recording.
+ *
+ * TODO: add more properties
+ *   1. bitrate
+ *   2. sample rate
  */
-data class AudioConfig(
-    val bitrate: Long
-    // TODO: more properties
-)
+class AudioConfig
