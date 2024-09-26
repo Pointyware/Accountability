@@ -74,8 +74,8 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Array<String>>
 
     private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
-        audioPreference.isEnabled = audioVideoSettingsUiState.audioEnabled
-        videoPreference.isEnabled = audioVideoSettingsUiState.videoEnabled
+        audioPreference.isChecked = audioVideoSettingsUiState.audioEnabled
+        videoPreference.isChecked = audioVideoSettingsUiState.videoEnabled
 
         cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
         resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
