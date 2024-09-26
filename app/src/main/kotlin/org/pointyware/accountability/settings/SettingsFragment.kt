@@ -104,14 +104,10 @@ class SettingsFragment: PreferenceFragmentCompat() {
         permissionResults.forEach { (permission, result) ->
             when (permission) {
                 Manifest.permission.RECORD_AUDIO -> {
-                    if (!result) {
-                        isAudioEnabledPreference.isChecked = false
-                    }
+                    isAudioEnabledPreference.permissionGranted(result)
                 }
                 Manifest.permission.CAMERA -> {
-                    if (!result) {
-                        isCameraEnabledPreference.isChecked = false
-                    }
+                    isCameraEnabledPreference.permissionGranted(result)
                 }
                 Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
                     if (!result) {
@@ -119,9 +115,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
                     }
                 }
                 Manifest.permission.CALL_PHONE -> {
-                    if (!result) {
-                        contactPreference.isChecked = false
-                    }
+                    contactPreference.permissionGranted(result)
                 }
             }
         }
