@@ -24,8 +24,8 @@ class CallingOptionsAndroidDataSource @Inject constructor(
 
     override val callingConfig: CallingConfig
         get() = CallingConfig(
-            emergencyNumber = "911",
-            contactNumber = sharedPreferences.getString(contactKey, null),
+            emergencyNumber = "911", // TODO: get from resources
+            contactNumber = getContactNumber(),
             callOnStart = sharedPreferences.getBoolean(callOnStartKey, false)
         )
 
