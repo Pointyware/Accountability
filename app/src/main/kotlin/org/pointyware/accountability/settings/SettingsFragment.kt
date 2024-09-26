@@ -47,12 +47,12 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
     private val settingsViewModel by activityViewModels<SettingsViewModel>()
 
-    private lateinit var audioPreference: PermissionPreference
-    private lateinit var videoPreference: PermissionPreference
-    private lateinit var cameraPreference: CameraPreference
-    private lateinit var resolutionPreference: ResolutionPreference
 
 //    private val backupEnabledPreference: SwitchPreference? = null
+    private lateinit var isAudioEnabledPreference: PermissionPreference
+    private lateinit var isCameraEnabledPreference: PermissionPreference
+    private lateinit var selectedCameraPreference: CameraPreference
+    private lateinit var selectedResolutionPreference: ResolutionPreference
 
     private lateinit var contactPreference: ContactPreference
     private lateinit var callOnStartPreference: SwitchPreference
@@ -89,10 +89,10 @@ class SettingsFragment: PreferenceFragmentCompat() {
             }
         }
 
-        audioPreference = findPreference(resources.getString(R.string.pAVAudio))!!
-        videoPreference = findPreference(resources.getString(R.string.pAVVideo))!!
-        cameraPreference = findPreference(resources.getString(R.string.pAVCamera))!!
-        resolutionPreference = findPreference(resources.getString(R.string.pAVCameraResolution))!!
+        isAudioEnabledPreference = findPreference(resources.getString(R.string.pAVAudio))!!
+        isCameraEnabledPreference = findPreference(resources.getString(R.string.pAVVideo))!!
+        selectedCameraPreference = findPreference(resources.getString(R.string.pAVCamera))!!
+        selectedResolutionPreference = findPreference(resources.getString(R.string.pAVCameraResolution))!!
 
         contactPreference = findPreference(resources.getString(R.string.pCallingContact))!!
         callOnStartPreference = findPreference(resources.getString(R.string.pCallingOnStart))!!
@@ -100,7 +100,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
         storagePreference = findPreference(resources.getString(R.string.pStorageLocation))!!
 
-        arrayOf(videoPreference, audioPreference, contactPreference).forEach {
+        arrayOf(isCameraEnabledPreference, isAudioEnabledPreference, contactPreference).forEach {
             it.launcher = requestPermissionLauncher
         }
 
@@ -111,7 +111,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        videoPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        isCameraEnabledPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
 
             true
         }
@@ -138,11 +138,11 @@ class SettingsFragment: PreferenceFragmentCompat() {
     }
 
     private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
-        audioPreference.isChecked = audioVideoSettingsUiState.audioEnabled
-        videoPreference.isChecked = audioVideoSettingsUiState.videoEnabled
+        isAudioEnabledPreference.isChecked = audioVideoSettingsUiState.audioEnabled
+        isCameraEnabledPreference.isChecked = audioVideoSettingsUiState.videoEnabled
 
-        cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-        resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+        selectedCameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+        selectedResolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
     }
 
     private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
