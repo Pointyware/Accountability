@@ -24,6 +24,7 @@ class AndroidConfigurationRepository @Inject constructor(
     private val callingOptionsDataSource: CallingOptionsDataSource
 ): ConfigurationRepository {
 
+    // TODO: get data-store/shared preferences to retrieve configuration
 
     override suspend fun getRecordingConfiguration(): RecordingConfig {
         return RecordingConfig(
