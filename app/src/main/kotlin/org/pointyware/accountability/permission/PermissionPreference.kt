@@ -30,8 +30,8 @@ open class PermissionPreference(
 
     init {
         context.theme.obtainStyledAttributes(
-            attrs, R.styleable.settings_permission_PermissionPreference,
-            0, 0).use {
+            attrs, R.styleable.settings_permission_PermissionPreference, 0, 0
+        ).use {
             it.getString(R.styleable.settings_permission_PermissionPreference_permission)?.also { value ->
                 permission = value
             } ?: run {
