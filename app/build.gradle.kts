@@ -70,6 +70,8 @@ dependencies {
     implementation(projects.feature.calling)
     implementation(projects.feature.recording)
 
+    implementation(libs.kotlinx.coroutinesAndroid)
+
     implementation(libs.timber)
 
     implementation(libs.androidx.appCompat)
