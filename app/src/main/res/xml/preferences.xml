@@ -11,6 +11,11 @@
         app:iconSpaceReserved="false">
 
         <org.pointyware.accountability.permission.PermissionPreference
+            android:key="@string/pAVAudio"
+            android:summary="@string/summary_audio"
+            android:title="@string/title_audio"
+            app:permission="android.permission.RECORD_AUDIO" />
+        <org.pointyware.accountability.permission.PermissionPreference
             android:key="@string/pAVVideo"
             android:summary="@string/summary_video"
             android:title="@string/title_video"
@@ -28,12 +33,6 @@
             android:key="@string/pAVCameraResolution"
             android:summary="@string/summary_camera_resolution"
             android:title="@string/title_camera_resolution" />
-
-        <org.pointyware.accountability.permission.PermissionPreference
-            android:key="@string/pAVAudio"
-            android:summary="@string/summary_audio"
-            android:title="@string/title_audio"
-            app:permission="android.permission.RECORD_AUDIO" />
 
     </PreferenceCategory>
 <!--    <PreferenceCategory-->
