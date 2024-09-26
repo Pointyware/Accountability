@@ -173,29 +173,5 @@ class SettingsFragment: PreferenceFragmentCompat() {
             pickContactLauncher.launch(Unit)
             true
         }
-
-        lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-
-                launch {
-                    settingsViewModel.recordingConfig.collect {
-                        it?.video?.let { videoConfig ->
-                        }
-                        it?.audio?.let { audioConfig ->
-                        }
-                    }
-                }
-                launch {
-                    settingsViewModel.storageLocation.collect {
-
-                    }
-                }
-                launch {
-                    settingsViewModel.callingConfig.collect {
-                        contactPreference.isEnabled = it != null
-                    }
-                }
-            }
-        }
     }
 }
