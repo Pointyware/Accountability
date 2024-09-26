@@ -15,14 +15,14 @@ import javax.inject.Inject
  */
 class AudioDao @Inject constructor(
     private val sharedPreferences: SharedPreferences,
-    resources: Resources, // TODO: consider replacing with String to configure the key used
+    resources: Resources,
 ): AudioOptionsDataSource {
 
     private val key: String = resources.getString(R.string.pAVAudio)
 
     override val audioConfig: AudioConfig?
         get() = if (sharedPreferences.getBoolean(key, false)) {
-            AudioConfig(0)
+            AudioConfig()
         } else {
             null
         }
