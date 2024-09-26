@@ -73,24 +73,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var pickContactLauncher: ActivityResultLauncher<Unit>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Array<String>>
 
-    private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
-        audioPreference.isChecked = audioVideoSettingsUiState.audioEnabled
-        videoPreference.isChecked = audioVideoSettingsUiState.videoEnabled
-
-        cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-        resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-    }
-
-    private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
-        contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
-        callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
-
-    }
-
-    private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
-        storagePreference.value = storageSettingsUiState.storageLocationString
-    }
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
@@ -152,5 +134,23 @@ class SettingsFragment: PreferenceFragmentCompat() {
                 }
             }
         }
+    }
+
+    private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
+        audioPreference.isChecked = audioVideoSettingsUiState.audioEnabled
+        videoPreference.isChecked = audioVideoSettingsUiState.videoEnabled
+
+        cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+        resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+    }
+
+    private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
+        contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
+        callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
+
+    }
+
+    private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
+        storagePreference.value = storageSettingsUiState.storageLocationString
     }
 }
