@@ -13,8 +13,13 @@
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="settings.permission.PermissionPreference">
+    <declare-styleable name="settings.permission.PermissionPreference" parent="SwitchPreference">
         <attr name="permission" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="settings.permission.ContactPreference" parent="settings.permission.PermissionPreference">
+        <!-- Determines the key that will be used to store the contact uri -->
+        <attr name="contactKey" format="string" />
     </declare-styleable>
 
 </resources>
