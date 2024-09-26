@@ -46,10 +46,10 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
     private val settingsViewModel by activityViewModels<SettingsViewModel>()
 
+    private lateinit var audioPreference: PermissionPreference
     private lateinit var videoPreference: PermissionPreference
     private lateinit var cameraPreference: CameraPreference
     private lateinit var resolutionPreference: ResolutionPreference
-    private lateinit var audioPreference: PermissionPreference
 
 //    private val backupEnabledPreference: SwitchPreference? = null
 //    private lateinit var gDrivePreference: GDrivePreference
