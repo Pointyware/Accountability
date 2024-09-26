@@ -29,7 +29,7 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch { configurationRepository.setAudioEnabled(enabled) }
     }
 
-    fun setCameraEnabled(enabled: Boolean) {
+    fun setVideoEnabled(enabled: Boolean) {
         viewModelScope.launch { configurationRepository.setCameraEnabled(enabled) }
     }
 
