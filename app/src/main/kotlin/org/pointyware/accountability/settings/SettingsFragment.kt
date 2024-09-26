@@ -94,18 +94,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
-        lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                settingsViewModel.state.collect { state ->
-                    state?.let {
-                        bindVideoPreferences(it.audioVideoSettings)
-                        bindCallingPreferences(it.callingSettings)
-                        bindLocationPreferences(it.storageSettings)
-                    }
-                }
-            }
-        }
-
         requestPermissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { permissionResults ->
@@ -151,6 +139,18 @@ class SettingsFragment: PreferenceFragmentCompat() {
         contactPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             pickContactLauncher.launch(Unit)
             true
+        }
+
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                settingsViewModel.state.collect { state ->
+                    state?.let {
+                        bindVideoPreferences(it.audioVideoSettings)
+                        bindCallingPreferences(it.callingSettings)
+                        bindLocationPreferences(it.storageSettings)
+                    }
+                }
+            }
         }
     }
 }
