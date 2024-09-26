@@ -12,6 +12,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import org.pointyware.accountability.R
 import org.pointyware.accountability.contact.ContactPreference
 import org.pointyware.accountability.contact.PickNumberResultCallback
@@ -19,9 +22,7 @@ import org.pointyware.accountability.contact.PickNumberResultContract
 import org.pointyware.accountability.permission.PermissionPreference
 import org.pointyware.accountability.picture.CameraPreference
 import org.pointyware.accountability.picture.ResolutionPreference
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
+import org.pointyware.accountability.viewer.CallButtonUiState
 
 /**
  * Implemented/Tested Preferences:
@@ -75,8 +76,19 @@ class SettingsFragment: PreferenceFragmentCompat() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: register permission callbacks
-        val permissionLauncher = registerForActivityResult(
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                settingsViewModel.state.collect { state ->
+                    state?.let {
+                        bindVideoPreferences(it.audioVideoSettings)
+                        bindCallingPreferences(it.callingSettings)
+                        bindLocationPreferences(it.storageSettings)
+                    }
+                }
+            }
+        }
+
+        requestPermissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { permissionResults ->
             permissionResults.forEach { (permission, result) ->
@@ -89,6 +101,24 @@ class SettingsFragment: PreferenceFragmentCompat() {
                 }
             }
         }
+    }
+
+    private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
+        audioPreference.isEnabled = audioVideoSettingsUiState.audioEnabled
+        videoPreference.isEnabled = audioVideoSettingsUiState.videoEnabled
+
+        cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+        resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+    }
+
+    private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
+        contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
+        callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
+
+    }
+
+    private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
+        storagePreference.value = storageSettingsUiState.storageLocationString
     }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
