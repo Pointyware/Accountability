@@ -133,11 +133,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     //                findPreference<SwitchPreference>(key)?.isChecked = false
             }
          */
-            // TODO: attach toggle listener to request permission
-//        requestPermissionLauncher = registerForActivityResult(
-//            ActivityResultContracts.RequestMultiplePermissions(),
-//            requestPermissionResultCallback
-//        )
 
         audioPreference = findPreference(resources.getString(R.string.pAVAudio))!!
         videoPreference = findPreference(resources.getString(R.string.pAVVideo))!!
