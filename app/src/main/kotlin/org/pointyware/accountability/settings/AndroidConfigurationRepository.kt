@@ -21,7 +21,7 @@ class AndroidConfigurationRepository @Inject constructor(
     private val cameraOptionsDataSource: CameraOptionsDataSource,
     private val audioOptionsDataSource: AudioOptionsDataSource,
     private val locationDataSource: LocationDataSource,
-    private val callingOptionsDataSource: CallingOptionsDataSource
+    private val callingOptionsDataSource: CallingOptionsDataSource,
 ): ConfigurationRepository {
 
     // TODO: get data-store/shared preferences to retrieve configuration
