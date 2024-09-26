@@ -12,7 +12,7 @@ import org.pointyware.accountability.recording.VisualConfig
  */
 interface CameraOptionsDataSource {
 
-    val visualConfig: VisualConfig?
+    suspend fun getVisualConfig(): VisualConfig?
 
     /**
      * Returns a list of cameras by their string id.
