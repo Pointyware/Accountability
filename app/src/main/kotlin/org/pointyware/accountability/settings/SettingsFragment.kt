@@ -55,33 +55,8 @@ class SettingsFragment: PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
         requestPermissionLauncher = registerForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions()
-        ) { permissionResults ->
-            permissionResults.forEach { (permission, result) ->
-                when (permission) {
-                    Manifest.permission.RECORD_AUDIO -> {
-                        if (!result) {
-                            isAudioEnabledPreference.isChecked = false
-                        }
-                    }
-                    Manifest.permission.CAMERA -> {
-                        if (!result) {
-                            isCameraEnabledPreference.isChecked = false
-                        }
-                    }
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
-                        if (!result) {
-                            storagePreference.value = StorageLocation.Internal.name
-                        }
-                    }
-                    Manifest.permission.CALL_PHONE -> {
-                        if (!result) {
-                            contactPreference.isChecked = false
-                        }
-                    }
-                }
-            }
-        }
+            ActivityResultContracts.RequestMultiplePermissions(),
+            ::handlePermissionResults)
 
         isAudioEnabledPreference = findPreference(resources.getString(R.string.pAVAudio))!!
         isCameraEnabledPreference = findPreference(resources.getString(R.string.pAVVideo))!!
@@ -125,6 +100,33 @@ class SettingsFragment: PreferenceFragmentCompat() {
                         bindVideoPreferences(it.audioVideoSettings)
                         bindCallingPreferences(it.callingSettings)
                         bindLocationPreferences(it.storageSettings)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun handlePermissionResults(permissionResults: Map<String, Boolean>) {
+        permissionResults.forEach { (permission, result) ->
+            when (permission) {
+                Manifest.permission.RECORD_AUDIO -> {
+                    if (!result) {
+                        isAudioEnabledPreference.isChecked = false
+                    }
+                }
+                Manifest.permission.CAMERA -> {
+                    if (!result) {
+                        isCameraEnabledPreference.isChecked = false
+                    }
+                }
+                Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
+                    if (!result) {
+                        storagePreference.value = StorageLocation.Internal.name
+                    }
+                }
+                Manifest.permission.CALL_PHONE -> {
+                    if (!result) {
+                        contactPreference.isChecked = false
                     }
                 }
             }
