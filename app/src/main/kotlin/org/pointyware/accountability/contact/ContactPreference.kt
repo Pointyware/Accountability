@@ -54,18 +54,6 @@ class ContactPreference(
         }
     }
 
-    override fun permissionGranted(granted: Boolean) {
-        super.permissionGranted(granted)
-        Timber.i("granted $granted")
-
-        if (granted) {
-            requestContactSelection()
-        } else {
-            // permission denied - clear contact
-            // TODO: disable in repository
-        }
-    }
-
     private fun requestContactSelection() {
 
         // We want to read the contact info, so we need permission
