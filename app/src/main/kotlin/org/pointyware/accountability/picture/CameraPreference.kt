@@ -3,6 +3,7 @@ package org.pointyware.accountability.picture
 import android.content.Context
 import android.util.AttributeSet
 import androidx.preference.ListPreference
+import org.pointyware.accountability.recording.VisualConfig
 
 /**
  * So far, this class is just a wrapper around ListPreference.
@@ -21,5 +22,9 @@ class CameraPreference(
 //        entries = cameraDao.cameraList
 //        entryValues = entries
 //        setDefaultValue(cameraDao.selectedCamera)
+    }
+
+    fun setVideoConfig(config: VisualConfig?) {
+        setDefaultValue(config?.cameraId)
     }
 }

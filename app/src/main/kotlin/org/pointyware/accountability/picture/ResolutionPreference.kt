@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.preference.ListPreference
 import androidx.preference.Preference
+import org.pointyware.accountability.recording.VisualConfig
 import timber.log.Timber
 
 /**
@@ -50,5 +51,13 @@ class ResolutionPreference(
         Timber.v("dependency changed")
         // TODO: move to more suitable location
         initEntries()
+    }
+
+    fun setVideoConfig(video: VisualConfig?) {
+        video?.let {
+            val resolution = "${video.width}x${video.height}"
+            value = resolution
+            setDefaultValue(resolution)
+        }
     }
 }
