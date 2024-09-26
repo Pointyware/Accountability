@@ -10,9 +10,9 @@ import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.media.MediaRecorder
 import android.util.Size
-import kotlinx.coroutines.runBlocking
 import org.pointyware.accountability.R
 import org.pointyware.accountability.recording.VisualConfig
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -32,9 +32,14 @@ class CameraOptionsManagerDataSource @Inject constructor(
 
     override suspend fun getVisualConfig(): VisualConfig? {
         return if (getEnabled()) {
-            // TODO: not robust - assumes first camera and resolution; in rare cases could throw
-            val camera = getSelectedCamera() ?: runBlocking { getAvailableCameras().first() }
-            val resolution = getResolution() ?: runBlocking { getAvailableResolutions(camera) }.first()
+            val camera = getSelectedCamera() ?: getAvailableCameras().firstOrNull() ?: run {
+                Timber.e("No cameras available.")
+                return null
+            }
+            val resolution = getResolution() ?: getAvailableResolutions(camera).firstOrNull() ?: run {
+                Timber.e("No resolutions available for camera ($camera).")
+                return null
+            }
             VisualConfig(camera, resolution)
         } else { null }
     }
