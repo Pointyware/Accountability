@@ -3,14 +3,18 @@ package org.pointyware.accountability.settings
 import android.util.Size
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import org.pointyware.accountability.calling.CallingConfig
 import org.pointyware.accountability.permission.PermissionVerifier
 import org.pointyware.accountability.recording.RecordingConfig
 import org.pointyware.accountability.storage.StorageLocation
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -21,6 +25,29 @@ class SettingsViewModel @Inject constructor(
     private val configurationRepository: ConfigurationRepository,
     private val permissionChecker: PermissionVerifier
 ): ViewModel() {
+
+    val state: StateFlow<SettingsUiState?> = flow {
+
+        val recordingConfig = viewModelScope.async { configurationRepository.getRecordingConfiguration() }
+        val storageLocation = viewModelScope.async { configurationRepository.getStorageLocation() }
+        val callingConfig = viewModelScope.async { configurationRepository.getCallingConfiguration() }
+
+        emit(SettingsUiState(
+            audioVideoSettings = AudioVideoSettingsUiState(
+                recordingConfig.await()
+            ),
+            callingSettings = CallingSettingsUiState(
+                callingConfig.await()
+            ),
+            storageSettings = StorageSettingsUiState(
+                storageLocation.await()
+            )
+        ))
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.Eagerly,
+        null
+    )
 
     private val _recordingConfig = MutableStateFlow<RecordingConfig?>(null)
     val recordingConfig: StateFlow<RecordingConfig?> = _recordingConfig
