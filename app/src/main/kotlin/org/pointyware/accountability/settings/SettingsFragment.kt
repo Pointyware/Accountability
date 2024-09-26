@@ -24,6 +24,7 @@ import org.pointyware.accountability.picture.CameraPreference
 import org.pointyware.accountability.picture.ResolutionPreference
 import org.pointyware.accountability.storage.StorageLocation
 import org.pointyware.accountability.viewer.CallButtonUiState
+import timber.log.Timber
 
 /**
  * Presents recording, calling, and storage preferences to the user to control their experience.
@@ -127,6 +128,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
     }
 
     private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
+        Timber.v("bind video preferences: $audioVideoSettingsUiState")
         isAudioEnabledPreference.isChecked = audioVideoSettingsUiState.audioEnabled
         isCameraEnabledPreference.isChecked = audioVideoSettingsUiState.videoEnabled
 
@@ -135,12 +137,14 @@ class SettingsFragment: PreferenceFragmentCompat() {
     }
 
     private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
+        Timber.v("bind calling preferences: $callingSettingsUiState")
         contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
         callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
 
     }
 
     private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
+        Timber.v("bind storage preferences: $storageSettingsUiState")
         storagePreference.value = storageSettingsUiState.storageLocationString
     }
 }
