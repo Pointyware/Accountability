@@ -25,18 +25,7 @@ import org.pointyware.accountability.picture.ResolutionPreference
 import org.pointyware.accountability.viewer.CallButtonUiState
 
 /**
- * Implemented/Tested Preferences:
- *
- * Planned Preferences:
- * * Enable Video
- *     * Device
- *     * Resolution
- * * Enable Audio
- * * Enable Calling
- *     * Enable Friend
- *         * Select Contact
- *     * Enable Emergency Services
- *         * Select Emergency Number
+ * Presents recording, calling, and storage preferences to the user to control their experience.
  */
 @AndroidEntryPoint
 class SettingsFragment: PreferenceFragmentCompat() {
