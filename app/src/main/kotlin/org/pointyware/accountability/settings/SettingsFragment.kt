@@ -87,9 +87,9 @@ class SettingsFragment: PreferenceFragmentCompat() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 settingsViewModel.state.collect { state ->
                     state?.let {
-                        bindVideoPreferences(it.audioVideoSettings)
-                        bindCallingPreferences(it.callingSettings)
-                        bindLocationPreferences(it.storageSettings)
+//                        bindVideoPreferences(it.audioVideoSettings)
+//                        bindCallingPreferences(it.callingSettings)
+//                        bindLocationPreferences(it.storageSettings)
                     }
                 }
             }
