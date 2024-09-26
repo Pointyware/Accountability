@@ -55,9 +55,8 @@ class SettingsFragment: PreferenceFragmentCompat() {
 //    private lateinit var gDrivePreference: GDrivePreference
 
     private lateinit var contactPreference: ContactPreference
-
-//    private val callOnStartPreference: SwitchPreference? = null
-//    private val enableEmergencyNumber: SwitchPreference? = null
+    private lateinit var callOnStartPreference: SwitchPreference
+    private lateinit var enableEmergencyNumber: SwitchPreference
 
 //    private val shareLocationPreference: SwitchPreference? = null
 //    private val distanceTimePreference: ListPreference? = null
