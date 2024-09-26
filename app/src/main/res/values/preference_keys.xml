@@ -13,9 +13,10 @@
     <string name="pAVAudio">avAudio</string>
 
     <!--  Calling Keys  -->
-    <string name="pCallingContact">callingContact</string>
-    <string name="pCallingOnStart">callingOnStart</string>
-    <string name="pCallingEmergency">callingEmergency</string>
+    <string name="pCallingContact">isCallingFriendEnabled</string>
+    <string name="pCallingNumber">friendNumber</string>
+    <string name="pCallingOnStart">isCallingOnStartEnabled</string>
+    <string name="pCallingEmergency">isEmergencyNumberEnabled</string>
 
     <!--  Backup Keys  -->
     <string name="pBackupEnabled">backupEnabled</string>
