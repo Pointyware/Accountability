@@ -72,8 +72,6 @@ dependencies {
 
     implementation(libs.kotlinx.coroutinesAndroid)
 
-    implementation(libs.timber)
-
     implementation(libs.androidx.appCompat)
     implementation(libs.androidx.activityKtx)
     implementation(libs.androidx.compose.material3)
@@ -87,6 +85,7 @@ dependencies {
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.timber)
 
     debugImplementation(libs.androidx.compose.manifest)
 
