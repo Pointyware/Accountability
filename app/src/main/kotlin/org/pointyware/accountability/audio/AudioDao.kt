@@ -20,14 +20,15 @@ class AudioDao @Inject constructor(
 
     private val key: String = resources.getString(R.string.pAVAudio)
 
-    override val audioConfig: AudioConfig?
-        get() = if (sharedPreferences.getBoolean(key, false)) {
+    override suspend fun getAudioConfig(): AudioConfig? {
+        return if (sharedPreferences.getBoolean(key, false)) {
             AudioConfig()
         } else {
             null
         }
+    }
 
-    override fun setEnabled(enabled: Boolean) {
+    override suspend fun setEnabled(enabled: Boolean) {
         sharedPreferences.edit {
             putBoolean(key, enabled)
         }

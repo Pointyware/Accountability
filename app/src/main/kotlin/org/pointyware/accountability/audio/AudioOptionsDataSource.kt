@@ -11,8 +11,7 @@ import org.pointyware.accountability.recording.AudioConfig
  */
 interface AudioOptionsDataSource {
 
-    val audioConfig: AudioConfig?
+    suspend fun getAudioConfig(): AudioConfig?
 
-    fun setEnabled(enabled: Boolean)
-    // TODO: provide information about available bitrates and other audio config info
+    suspend fun setEnabled(enabled: Boolean)
 }
