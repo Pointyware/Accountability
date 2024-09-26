@@ -73,8 +73,26 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var pickContactLauncher: ActivityResultLauncher<Unit>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Array<String>>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
+        audioPreference.isEnabled = audioVideoSettingsUiState.audioEnabled
+        videoPreference.isEnabled = audioVideoSettingsUiState.videoEnabled
+
+        cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+        resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
+    }
+
+    private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
+        contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
+        callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
+
+    }
+
+    private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
+        storagePreference.value = storageSettingsUiState.storageLocationString
+    }
+
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.preferences, rootKey)
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
@@ -101,38 +119,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
                 }
             }
         }
-    }
-
-    private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
-        audioPreference.isEnabled = audioVideoSettingsUiState.audioEnabled
-        videoPreference.isEnabled = audioVideoSettingsUiState.videoEnabled
-
-        cameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-        resolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-    }
-
-    private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
-        contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
-        callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
-
-    }
-
-    private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
-        storagePreference.value = storageSettingsUiState.storageLocationString
-    }
-
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences, rootKey)
-        /*
-        // TODO: replace with gDriveResultContract
-
-            if (resultCode == Activity.RESULT_OK) {
-    //                gDrivePreference.setDriveConnected(true)
-            } else {
-    //                val key = resources.settingsKey(R.string.pBackupGDrive)
-    //                findPreference<SwitchPreference>(key)?.isChecked = false
-            }
-         */
 
         audioPreference = findPreference(resources.getString(R.string.pAVAudio))!!
         videoPreference = findPreference(resources.getString(R.string.pAVVideo))!!
