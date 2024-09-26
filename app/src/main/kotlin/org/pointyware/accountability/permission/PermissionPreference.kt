@@ -69,8 +69,8 @@ open class PermissionPreference(
 
     open fun permissionGranted(granted: Boolean) {
         if (granted) {
-            isChecked = granted
-            sharedPreferences?.edit { putBoolean(key, granted) }
+            isChecked = true
+            sharedPreferences?.edit { putBoolean(key, true) }
         }
     }
 }
