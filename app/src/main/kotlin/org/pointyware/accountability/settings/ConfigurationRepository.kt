@@ -12,9 +12,9 @@ import org.pointyware.accountability.storage.StorageLocation
 
 /**
  * Maintains configuration information for the following features:
- * * Recording configuration
- * * Recording storage location
- * * Calling configuration
+ * - Recording configuration
+ * - Recording storage location
+ * - Calling configuration
  */
 interface ConfigurationRepository {
 
