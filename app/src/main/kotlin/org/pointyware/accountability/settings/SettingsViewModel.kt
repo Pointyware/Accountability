@@ -76,31 +76,4 @@ class SettingsViewModel @Inject constructor(
             }
         }
     }
-
-    /*
-    //    private val backupEnabledPreference: SwitchPreference? = null
-    //    private lateinit var gDrivePreference: GDrivePreference
-    //    private val callOnStartPreference: SwitchPreference? = null
-    //    private val shareLocationPreference: SwitchPreference? = null
-    //    private val distanceTimePreference: ListPreference? = null
-
-    //    private val disguisePreference: SwitchPreference? = null
-    //    private val titlePreference: EditTextPreference? = null
-    //    private val messagePreference: EditTextPreference? = null
-    //    private val iconPreference: ListPreference? = null
-    //    private val controlPreference: SwitchPreference? = null
-     */
-
-    /*
-    TODO: extra permissions currently not supported
-      * Cloud storage service integration
-        * Google
-      * Notification
-        * Title
-        * Message
-        * Icon
-        * Recording Control
-      * Share Location
-        * Distance/Time settings - update every distance or time period
-     */
 }
