@@ -17,6 +17,8 @@ import timber.log.Timber
 
 /**
  * A preference that represents a single permission.
+ *
+ * This preference will request the permission when the user attempts to enable it.
  */
 open class PermissionPreference(
     context: Context, attrs: AttributeSet
