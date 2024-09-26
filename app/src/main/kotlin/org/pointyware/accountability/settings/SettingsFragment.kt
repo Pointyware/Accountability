@@ -47,8 +47,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
     private val settingsViewModel by activityViewModels<SettingsViewModel>()
 
-
-//    private val backupEnabledPreference: SwitchPreference? = null
     private lateinit var isAudioEnabledPreference: PermissionPreference
     private lateinit var isCameraEnabledPreference: PermissionPreference
     private lateinit var selectedCameraPreference: CameraPreference
@@ -57,15 +55,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var contactPreference: ContactPreference
     private lateinit var callOnStartPreference: SwitchPreference
     private lateinit var enableEmergencyNumber: SwitchPreference
-
-//    private val shareLocationPreference: SwitchPreference? = null
-//    private val distanceTimePreference: ListPreference? = null
-
-//    private val disguisePreference: SwitchPreference? = null
-//    private val titlePreference: EditTextPreference? = null
-//    private val messagePreference: EditTextPreference? = null
-//    private val iconPreference: ListPreference? = null
-//    private val controlPreference: SwitchPreference? = null
 
     private lateinit var storagePreference: ListPreference
 
