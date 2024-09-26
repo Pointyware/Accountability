@@ -11,20 +11,10 @@ import org.pointyware.accountability.recording.RecordingConfig
 import org.pointyware.accountability.storage.StorageLocation
 
 /**
- * I'm now thinking this should really be broken up.
- *
  * Maintains configuration information for the following features:
  * * Recording configuration
  * * Recording storage location
  * * Calling configuration
- * * Backup configuration *
- * * Location configuration *
- *
- * &#42; - Planned
- *
- * __note__ - some might see this as a SRP violation, but each configuration is handled by its
- * own implementation. The *responsibility* of this interface is to provide all configuration
- * information.
  */
 interface ConfigurationRepository {
 
