@@ -53,7 +53,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var resolutionPreference: ResolutionPreference
 
 //    private val backupEnabledPreference: SwitchPreference? = null
-//    private lateinit var gDrivePreference: GDrivePreference
 
     private lateinit var contactPreference: ContactPreference
     private lateinit var callOnStartPreference: SwitchPreference
@@ -116,6 +115,8 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
             true
         }
+        // TODO: set camera options when video enabled
+        // TODO: set resolution options when camera selected
 
         contactPreference.contactLauncher = pickContactLauncher
         contactPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
