@@ -18,6 +18,7 @@ class CallingOptionsAndroidDataSource @Inject constructor(
 ): CallingOptionsDataSource {
 
     private val contactKey = resources.getString(R.string.pCallingContact)
+    private val numberKey = ContactPreference.numberKeyFromRoot(contactKey)
     private val callOnStartKey = resources.getString(R.string.pCallingOnStart)
 
     override val callingConfig: CallingConfig
