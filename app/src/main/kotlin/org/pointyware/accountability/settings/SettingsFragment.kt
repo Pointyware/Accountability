@@ -139,11 +139,15 @@ class SettingsFragment: PreferenceFragmentCompat() {
 //            requestPermissionResultCallback
 //        )
 
+        audioPreference = findPreference(resources.getString(R.string.pAVAudio))!!
         videoPreference = findPreference(resources.getString(R.string.pAVVideo))!!
         cameraPreference = findPreference(resources.getString(R.string.pAVCamera))!!
         resolutionPreference = findPreference(resources.getString(R.string.pAVCameraResolution))!!
-        audioPreference = findPreference(resources.getString(R.string.pAVAudio))!!
+
         contactPreference = findPreference(resources.getString(R.string.pCallingContact))!!
+        callOnStartPreference = findPreference(resources.getString(R.string.pCallingOnStart))!!
+        enableEmergencyNumber = findPreference(resources.getString(R.string.pCallingEmergency))!!
+
         storagePreference = findPreference(resources.getString(R.string.pStorageLocation))!!
 
         arrayOf(videoPreference, audioPreference, contactPreference).forEach {
