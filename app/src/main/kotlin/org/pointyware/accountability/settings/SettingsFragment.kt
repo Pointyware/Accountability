@@ -80,13 +80,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        isCameraEnabledPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-
-            true
-        }
-        // TODO: set camera options when video enabled
-        // TODO: set resolution options when camera selected
-
         contactPreference.contactLauncher = pickContactLauncher
         contactPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             pickContactLauncher.launch(Unit)
