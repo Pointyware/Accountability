@@ -70,9 +70,7 @@ open class PermissionPreference(
     }
 
     open fun permissionGranted(granted: Boolean) {
-        if (granted) {
-            isChecked = true
-            sharedPreferences?.edit { putBoolean(key, true) }
-        }
+        Timber.v("Permission granted: $granted")
+        sharedPreferences?.edit { putBoolean(key, granted) }
     }
 }
