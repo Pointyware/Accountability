@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.app.ActivityCompat
 import androidx.core.content.edit
+import androidx.core.content.res.use
 import androidx.preference.Preference.SummaryProvider
 import org.pointyware.accountability.R
 import org.pointyware.accountability.permission.PermissionPreference
@@ -28,11 +29,28 @@ class ContactPreference(
         }
     }
 
+    var contactKey: String? = null
+        private set
     var contactLauncher: ActivityResultLauncher<Unit>? = null
 
     init {
-        this.summaryProvider = SummaryProvider<ContactPreference> {
-            context.resources.getString(R.string.summary_emergency_contact_template, numberKeyFromRoot(key))
+        summaryProvider = SummaryProvider<ContactPreference> {
+            if (it.isChecked) {
+                getPersistedContact(null)?.let { contactUri ->
+                    context.resources.getString(R.string.summary_emergency_contact_on_with_contact, contactUri)
+                } ?: context.resources.getString(R.string.summary_emergency_contact_on_no_contact)
+            } else {
+                context.resources.getString(R.string.summary_emergency_contact_off)
+            }
+        }
+        context.theme.obtainStyledAttributes(
+            attrs, R.styleable.settings_permission_ContactPreference, 0, 0
+        ).use {
+            it.getString(R.styleable.settings_permission_ContactPreference_contactKey)?.also { value ->
+                contactKey = value
+            } ?: run {
+                Timber.e("Permission string not set for PermissionPreference(title:$title)")
+            }
         }
     }
 
