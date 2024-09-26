@@ -26,8 +26,8 @@ class AndroidConfigurationRepository @Inject constructor(
 
     override suspend fun getRecordingConfiguration(): RecordingConfig {
         return RecordingConfig(
-            audioOptionsDataSource.audioConfig,
-            cameraOptionsDataSource.visualConfig
+            audioOptionsDataSource.getAudioConfig(),
+            cameraOptionsDataSource.getVisualConfig()
         ).also {
             Timber.i("Configuration: $it")
         }
