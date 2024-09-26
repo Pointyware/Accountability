@@ -68,7 +68,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
 //    private val controlPreference: SwitchPreference? = null
 
     private lateinit var storagePreference: ListPreference
-    private lateinit var permissionPreferences: Array<PermissionPreference>
 
     private lateinit var pickContactLauncher: ActivityResultLauncher<Unit>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Array<String>>
@@ -117,12 +116,9 @@ class SettingsFragment: PreferenceFragmentCompat() {
         contactPreference = findPreference(resources.getString(R.string.pCallingContact))!!
         storagePreference = findPreference(resources.getString(R.string.pStorageLocation))!!
 
-        permissionPreferences = arrayOf(videoPreference, audioPreference, contactPreference)
-        // TODO: attach toggle listener to request permission
-//        permissionPreferences.forEach {
-//            requestPermissionResultCallback.registerPermissionPreference(it)
-//            it.launcher = requestPermissionLauncher
-//        }
+        arrayOf(videoPreference, audioPreference, contactPreference).forEach {
+            it.launcher = requestPermissionLauncher
+        }
 
         pickContactLauncher = registerForActivityResult(PickNumberResultContract(), PickNumberResultCallback(contactPreference))
         contactPreference.contactLauncher = pickContactLauncher
