@@ -156,13 +156,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*
-        TODO: Clean up SettingsFragment/ViewModel
-          1. Define SettingsUiState
-          2. Expose in SettingsViewModel
-          3. Bind to Preferences
-         */
-
         videoPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
 
             true
