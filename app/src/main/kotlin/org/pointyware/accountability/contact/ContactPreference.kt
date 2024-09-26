@@ -85,4 +85,59 @@ class ContactPreference(
             apply()
         }
     }
+
+
+    override fun hasKey(): Boolean {
+        return super.hasKey() && !contactKey.isNullOrEmpty()
+    }
+
+    /**
+     * @see androidx.preference.ListPreference.onSetInitialValue
+     */
+    override fun onSetInitialValue(defaultValue: Any?) {
+        super.onSetInitialValue(defaultValue)
+
+        persistContact(getPersistedContact(null))
+    }
+
+    /**
+     * Get the persisted contact URI.
+     * @see getPersistedString
+     * @see getPersistedBoolean
+     */
+    protected fun getPersistedContact(defaultReturnValue: Uri?): Uri? {
+        if (shouldPersist()) {
+            return defaultReturnValue
+        }
+
+        return (preferenceDataStore?.getString(contactKey, null)
+            ?: sharedPreferences?.getString(contactKey, null))?.let {
+            Uri.parse(it)
+        } ?: defaultReturnValue
+    }
+
+    /**
+     * Persist the contact URI.
+     * @see persistString
+     * @see persistBoolean
+     */
+    protected fun persistContact(uri: Uri?): Boolean {
+        if (!shouldPersist()) {
+            return false
+        }
+
+        if (uri == getPersistedContact(null)) {
+            return true
+        }
+
+        val uriString = uri?.toString()
+        return preferenceDataStore?.let {
+            it.putString(contactKey, uriString)
+            true
+        } ?: sharedPreferences?.edit()?.let { editor ->
+            editor.putString(contactKey, uriString)
+            editor.apply()
+            true
+        } ?: false
+    }
 }
