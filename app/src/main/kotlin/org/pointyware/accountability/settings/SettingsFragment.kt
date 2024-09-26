@@ -82,10 +82,6 @@ class SettingsFragment: PreferenceFragmentCompat() {
         super.onViewCreated(view, savedInstanceState)
 
         contactPreference.contactLauncher = pickContactLauncher
-        contactPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            pickContactLauncher.launch(Unit)
-            true
-        }
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
