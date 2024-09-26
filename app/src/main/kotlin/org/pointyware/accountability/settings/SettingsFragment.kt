@@ -22,6 +22,7 @@ import org.pointyware.accountability.contact.PickNumberResultContract
 import org.pointyware.accountability.permission.PermissionPreference
 import org.pointyware.accountability.picture.CameraPreference
 import org.pointyware.accountability.picture.ResolutionPreference
+import org.pointyware.accountability.storage.StorageLocation
 import org.pointyware.accountability.viewer.CallButtonUiState
 
 /**
@@ -58,11 +59,26 @@ class SettingsFragment: PreferenceFragmentCompat() {
         ) { permissionResults ->
             permissionResults.forEach { (permission, result) ->
                 when (permission) {
-                    Manifest.permission.RECORD_AUDIO -> {}
-                    Manifest.permission.CAMERA -> {}
-//                    Manifest.permission.WRITE_EXTERNAL_STORAGE -> {}
-                    Manifest.permission.CALL_PHONE -> {}
-                    Manifest.permission.READ_CONTACTS -> {}
+                    Manifest.permission.RECORD_AUDIO -> {
+                        if (!result) {
+                            isAudioEnabledPreference.isChecked = false
+                        }
+                    }
+                    Manifest.permission.CAMERA -> {
+                        if (!result) {
+                            isCameraEnabledPreference.isChecked = false
+                        }
+                    }
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
+                        if (!result) {
+                            storagePreference.value = StorageLocation.Internal.name
+                        }
+                    }
+                    Manifest.permission.CALL_PHONE -> {
+                        if (!result) {
+                            contactPreference.isChecked = false
+                        }
+                    }
                 }
             }
         }
