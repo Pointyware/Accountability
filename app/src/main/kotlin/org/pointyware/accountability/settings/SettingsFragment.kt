@@ -87,9 +87,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 settingsViewModel.state.collect { state ->
                     state?.let {
-//                        bindVideoPreferences(it.audioVideoSettings)
-//                        bindCallingPreferences(it.callingSettings)
-//                        bindLocationPreferences(it.storageSettings)
+
                     }
                 }
             }
@@ -118,26 +116,5 @@ class SettingsFragment: PreferenceFragmentCompat() {
                 }
             }
         }
-    }
-
-    private fun bindVideoPreferences(audioVideoSettingsUiState: AudioVideoSettingsUiState) {
-        Timber.v("bind video preferences: $audioVideoSettingsUiState")
-        isAudioEnabledPreference.isChecked = audioVideoSettingsUiState.audioEnabled
-        isCameraEnabledPreference.isChecked = audioVideoSettingsUiState.videoEnabled
-
-        selectedCameraPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-        selectedResolutionPreference.setVideoConfig(audioVideoSettingsUiState.recordingConfig.video)
-    }
-
-    private fun bindCallingPreferences(callingSettingsUiState: CallingSettingsUiState) {
-        Timber.v("bind calling preferences: $callingSettingsUiState")
-        contactPreference.isChecked = callingSettingsUiState.contactNumber is CallButtonUiState.Enabled
-        callOnStartPreference.isChecked = callingSettingsUiState.callOnStart
-
-    }
-
-    private fun bindLocationPreferences(storageSettingsUiState: StorageSettingsUiState) {
-        Timber.v("bind storage preferences: $storageSettingsUiState")
-        storagePreference.value = storageSettingsUiState.storageLocationString
     }
 }
