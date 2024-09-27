@@ -44,7 +44,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
     private lateinit var selectedResolutionPreference: ResolutionPreference
 
     private lateinit var contactPreference: ContactPreference
-    private lateinit var callOnStartPreference: SwitchPreference
+    private lateinit var callOnStartPreference: PermissionPreference
     private lateinit var enableEmergencyNumber: SwitchPreference
 
     private lateinit var storagePreference: ListPreference
@@ -112,7 +112,7 @@ class SettingsFragment: PreferenceFragmentCompat() {
                     contactPreference.permissionGranted(result)
                 }
                 Manifest.permission.CALL_PHONE -> {
-                    callOnStartPreference.isChecked = result
+                    callOnStartPreference.permissionGranted(result)
                 }
             }
         }

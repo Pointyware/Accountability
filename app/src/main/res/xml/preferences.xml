@@ -62,13 +62,14 @@
             app:contactKey="@string/pCallingNumber"
             android:summary="@string/summary_emergency_contact"
             android:title="@string/title_emergency_contact"
-            app:permission="android.permission.READ_CONTACTS"/>
+            app:permission="android.permission.READ_CONTACTS" />
 
-        <SwitchPreference
+        <org.pointyware.accountability.permission.PermissionPreference
             android:icon="@drawable/ic_call_on_start_pref"
             android:key="@string/pCallingOnStart"
             android:summary="@string/summary_call_on_start"
-            android:title="@string/title_call_on_start" />
+            android:title="@string/title_call_on_start"
+            app:permission="android.permission.CALL_PHONE" />
 
         <SwitchPreference
             android:icon="@drawable/ic_911_pref"
