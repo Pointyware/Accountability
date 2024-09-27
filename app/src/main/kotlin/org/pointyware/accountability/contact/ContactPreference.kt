@@ -60,6 +60,13 @@ class ContactPreference(
         }
     }
 
+    override fun permissionGranted(granted: Boolean) {
+        super.permissionGranted(granted)
+        if (granted) {
+            requestContactSelection()
+        }
+    }
+
     override fun onContactSelected(uri: Uri?) {
         Timber.i("contact: $uri")
         persistContact(uri)
