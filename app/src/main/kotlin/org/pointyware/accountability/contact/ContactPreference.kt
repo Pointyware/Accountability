@@ -70,6 +70,7 @@ class ContactPreference(
     override fun onContactSelected(uri: Uri?) {
         Timber.i("contact: $uri")
         persistContact(uri)
+        notifyChanged()
     }
 
 
