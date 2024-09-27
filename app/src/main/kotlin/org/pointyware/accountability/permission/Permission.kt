@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 package org.pointyware.accountability.permission
 
 import android.Manifest
@@ -42,7 +46,7 @@ enum class Permission(
          * Utility function to convert an int array into an array of permissions.
          */
         fun permissionArray(ordinalArray: IntArray): Array<Permission?> {
-            val allValues = values()
+            val allValues = entries.toTypedArray()
             return Array(ordinalArray.size) { ordinal ->
                 allValues.getOrNull(ordinal)
             }

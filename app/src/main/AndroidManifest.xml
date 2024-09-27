@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.pointyware.accountability">
 
@@ -44,34 +48,34 @@
 <!--            android:exported="false"-->
 <!--            android:foregroundServiceType="location|camera|microphone" />-->
 
-<!--        <activity-->
-<!--            android:name=".dashboard.MainActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/title_activity_main"-->
-<!--            android:theme="@style/AppTheme.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity
+            android:name=".dashboard.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity-->
-<!--            android:name=".settings.SettingsActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/label_settings_activity"> &lt;!&ndash; Shortcut Launcher &ndash;&gt;-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity-->
-<!--            android:name=".about.AboutActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme.About">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.SHOW_APP_INFO" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/label_settings_activity"> <!-- Shortcut Launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".about.AboutActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.About">
+            <intent-filter>
+                <action android:name="android.intent.action.SHOW_APP_INFO" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".viewer.ViewerActivity"
             android:exported="true"
@@ -86,9 +90,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name=".permission.ui.PermissionActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".permission.ui.PermissionActivity"
+            android:exported="false" />
 
 <!--        <receiver-->
 <!--            android:name=".recording.RecordingWidgetProvider"-->

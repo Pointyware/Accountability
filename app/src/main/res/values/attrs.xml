@@ -1,3 +1,7 @@
+<!--
+  ~ Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+  -->
+
 <resources>
 
     <!-- Declare custom theme attributes that allow changing which styles are
@@ -9,8 +13,13 @@
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="settings.permission.PermissionPreference">
+    <declare-styleable name="settings.permission.PermissionPreference" parent="SwitchPreference">
         <attr name="permission" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="settings.permission.ContactPreference" parent="settings.permission.PermissionPreference">
+        <!-- Determines the key that will be used to store the contact uri -->
+        <attr name="contactKey" format="string" />
     </declare-styleable>
 
 </resources>

@@ -1,3 +1,7 @@
+<!--
+  ~ Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+  -->
+
 <resources>
 
     <string name="app_name">Accountability</string>
@@ -43,7 +47,9 @@
 
     <string name="title_emergency_contact">Emergency Contact</string>
     <string name="summary_emergency_contact">Tap to select a contact.</string>
-    <string name="summary_emergency_contact_template">%s will be available to call while recording.</string>
+    <string name="summary_emergency_contact_off">Enable to call a friend while recording.</string>
+    <string name="summary_emergency_contact_on_no_contact">Tap to select a contact to call while recording.</string>
+    <string name="summary_emergency_contact_on_with_contact">%s will be available to call while recording.</string>
 
     <string name="title_call_on_start">Call on Start</string>
     <string name="summary_call_on_start">When you start recording, your emergency contact will be called immediately.</string>

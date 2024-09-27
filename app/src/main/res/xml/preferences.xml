@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+  -->
+
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -6,6 +10,11 @@
         android:title="Audio/Video Settings"
         app:iconSpaceReserved="false">
 
+        <org.pointyware.accountability.permission.PermissionPreference
+            android:key="@string/pAVAudio"
+            android:summary="@string/summary_audio"
+            android:title="@string/title_audio"
+            app:permission="android.permission.RECORD_AUDIO" />
         <org.pointyware.accountability.permission.PermissionPreference
             android:key="@string/pAVVideo"
             android:summary="@string/summary_video"
@@ -24,12 +33,6 @@
             android:key="@string/pAVCameraResolution"
             android:summary="@string/summary_camera_resolution"
             android:title="@string/title_camera_resolution" />
-
-        <org.pointyware.accountability.permission.PermissionPreference
-            android:key="@string/pAVAudio"
-            android:summary="@string/summary_audio"
-            android:title="@string/title_audio"
-            app:permission="android.permission.RECORD_AUDIO" />
 
     </PreferenceCategory>
 <!--    <PreferenceCategory-->
@@ -56,15 +59,17 @@
         <org.pointyware.accountability.contact.ContactPreference
             android:icon="@drawable/ic_contact_pref"
             android:key="@string/pCallingContact"
+            app:contactKey="@string/pCallingNumber"
             android:summary="@string/summary_emergency_contact"
             android:title="@string/title_emergency_contact"
-            app:permission="android.permission.READ_CONTACTS"/>
+            app:permission="android.permission.READ_CONTACTS" />
 
-        <SwitchPreference
+        <org.pointyware.accountability.permission.PermissionPreference
             android:icon="@drawable/ic_call_on_start_pref"
             android:key="@string/pCallingOnStart"
             android:summary="@string/summary_call_on_start"
-            android:title="@string/title_call_on_start" />
+            android:title="@string/title_call_on_start"
+            app:permission="android.permission.CALL_PHONE" />
 
         <SwitchPreference
             android:icon="@drawable/ic_911_pref"

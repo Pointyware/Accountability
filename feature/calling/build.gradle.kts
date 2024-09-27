@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
@@ -139,7 +143,7 @@ dependencies {
 
 android {
     namespace = "org.pointyware.accountability.feature.calling"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 21
     }

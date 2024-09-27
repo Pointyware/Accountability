@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 package org.pointyware.accountability.settings
 
 import android.util.Size
@@ -7,23 +11,18 @@ import org.pointyware.accountability.recording.RecordingConfig
 import org.pointyware.accountability.storage.StorageLocation
 
 /**
- * I'm now thinking this should really be broken up.
+ * Maintains configuration information for the following feature groups:
+ * - Recording configuration
+ * - Recording storage location
+ * - Calling configuration
  *
- * Maintains configuration information for the following features:
- * * Recording configuration
- * * Recording storage location
- * * Calling configuration
- * * Backup configuration *
- * * Location configuration *
- *
- * &#42; - Planned
- *
- * __note__ - some might see this as a SRP violation, but each configuration is handled by its
- * own implementation. The *responsibility* of this interface is to provide all configuration
- * information.
+ * Setters change single configuration options, while getters return the entire configuration.
  */
 interface ConfigurationRepository {
 
+    /**
+     * Returns the current recording configuration with all options.
+     */
     suspend fun getRecordingConfiguration(): RecordingConfig
     suspend fun setAudioEnabled(enabled: Boolean)
     suspend fun setCameraEnabled(enabled: Boolean)
@@ -33,12 +32,16 @@ interface ConfigurationRepository {
     suspend fun getStorageLocation(): StorageLocation
     suspend fun setStorageLocation(location: StorageLocation)
 
-    suspend fun getCallingConfiguration(): CallingConfig?
-    suspend fun setCallingEnabled(enabled: Boolean)
+    /**
+     * Returns the current calling configuration with all options.
+     */
+    suspend fun getCallingConfiguration(): CallingConfig
     suspend fun setEmergencyNumberEnabled(enabled: Boolean)
-    suspend fun setEmergencyNumber(number: String)
     suspend fun setContactNumberEnabled(enabled: Boolean)
     suspend fun setContactNumber(number: String)
 
+    /**
+     * Returns a list of permissions required by the application to support enabled features.
+     */
     suspend fun getRequiredPermissions(): List<Permission>
 }

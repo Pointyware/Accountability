@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
@@ -66,12 +70,14 @@ dependencies {
     implementation(projects.feature.calling)
     implementation(projects.feature.recording)
 
-    implementation(libs.timber)
+    implementation(libs.kotlinx.coroutinesAndroid)
 
     implementation(libs.androidx.appCompat)
     implementation(libs.androidx.activityKtx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.preference)
+    implementation(libs.androidx.recyclerView)
+    implementation(libs.androidx.recyclerViewSelection)
 
     // still need to include view-based material system
     implementation(libs.google.material)
@@ -79,6 +85,7 @@ dependencies {
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.timber)
 
     debugImplementation(libs.androidx.compose.manifest)
 

@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 package org.pointyware.accountability.settings
 
 import android.content.SharedPreferences
 import android.content.res.Resources
 import org.pointyware.accountability.R
 import org.pointyware.accountability.calling.CallingConfig
+import org.pointyware.accountability.contact.ContactPreference
 import javax.inject.Inject
 
 /**
@@ -14,32 +19,33 @@ class CallingOptionsAndroidDataSource @Inject constructor(
 ): CallingOptionsDataSource {
 
     private val contactKey = resources.getString(R.string.pCallingContact)
+    private val numberKey = resources.getString(R.string.pCallingNumber)
     private val callOnStartKey = resources.getString(R.string.pCallingOnStart)
 
     override val callingConfig: CallingConfig
         get() = CallingConfig(
-            emergencyNumber = "911",
-            contactNumber = sharedPreferences.getString(contactKey, null),
+            emergencyNumber = "911", // TODO: get from resources
+            contactNumber = getContactNumber(),
             callOnStart = sharedPreferences.getBoolean(callOnStartKey, false)
         )
 
-    override fun setEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
+    private fun getContactNumber(): String? {
+        return if (sharedPreferences.getBoolean(contactKey, false)) {
+            sharedPreferences.getString(numberKey, null)
+        } else {
+            null
+        }
     }
 
     override fun setEmergencyEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
-    }
-
-    override fun setEmergency(number: String) {
-        TODO("Not yet implemented")
+        sharedPreferences.edit().putBoolean(callOnStartKey, enabled).apply()
     }
 
     override fun setContactEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
+        sharedPreferences.edit().putBoolean(contactKey, enabled).apply()
     }
 
     override fun setContact(number: String) {
-        TODO("Not yet implemented")
+        sharedPreferences.edit().putString(numberKey, number).apply()
     }
 }

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 package org.pointyware.accountability.settings
 
 import android.util.Size
@@ -17,33 +21,32 @@ class AndroidConfigurationRepository @Inject constructor(
     private val cameraOptionsDataSource: CameraOptionsDataSource,
     private val audioOptionsDataSource: AudioOptionsDataSource,
     private val locationDataSource: LocationDataSource,
-    private val callingOptionsDataSource: CallingOptionsDataSource
+    private val callingOptionsDataSource: CallingOptionsDataSource,
 ): ConfigurationRepository {
-
 
     override suspend fun getRecordingConfiguration(): RecordingConfig {
         return RecordingConfig(
-            audioOptionsDataSource.audioConfig,
-            cameraOptionsDataSource.visualConfig
+            audioOptionsDataSource.getAudioConfig(),
+            cameraOptionsDataSource.getVisualConfig()
         ).also {
             Timber.i("Configuration: $it")
         }
     }
 
     override suspend fun setAudioEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
+        audioOptionsDataSource.setEnabled(enabled)
     }
 
     override suspend fun setCameraEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
+        cameraOptionsDataSource.setEnabled(enabled)
     }
 
     override suspend fun setSelectedCamera(camera: String) {
-        TODO("Not yet implemented")
+        cameraOptionsDataSource.setSelectedCamera(camera)
     }
 
     override suspend fun setCameraResolution(resolution: Size) {
-        TODO("Not yet implemented")
+        cameraOptionsDataSource.setResolution(resolution)
     }
 
     override suspend fun getStorageLocation(): StorageLocation {
@@ -54,32 +57,30 @@ class AndroidConfigurationRepository @Inject constructor(
         locationDataSource.setLocation(location)
     }
 
-    override suspend fun getCallingConfiguration(): CallingConfig? {
+    override suspend fun getCallingConfiguration(): CallingConfig {
         return callingOptionsDataSource.callingConfig
     }
 
-    override suspend fun setCallingEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun setEmergencyNumberEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun setEmergencyNumber(number: String) {
-        TODO("Not yet implemented")
+        callingOptionsDataSource.setEmergencyEnabled(enabled)
     }
 
     override suspend fun setContactNumberEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
+        callingOptionsDataSource.setContactEnabled(enabled)
     }
 
     override suspend fun setContactNumber(number: String) {
-        TODO("Not yet implemented")
+        callingOptionsDataSource.setContact(number)
     }
 
-    // TODO: write test
     override suspend fun getRequiredPermissions(): List<Permission> {
-        TODO("Not yet implemented")
+        val callingConfig = getCallingConfiguration()
+        val recordingConfig = getRecordingConfiguration()
+
+        return listOf(
+            Permission.Phone to (callingConfig.contactNumber != null || callingConfig.emergencyNumber != null),
+            Permission.Camera to (recordingConfig.video != null),
+            Permission.Audio to (recordingConfig.audio != null),
+        ).filter { it.second }.map { it.first }
     }
 }

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Pointyware. Use of this software is governed by the GPL-3.0 license.
+ */
+
 package org.pointyware.accountability.settings
 
 import android.util.Size
@@ -8,7 +12,7 @@ import org.pointyware.accountability.recording.VisualConfig
  */
 interface CameraOptionsDataSource {
 
-    val visualConfig: VisualConfig?
+    suspend fun getVisualConfig(): VisualConfig?
 
     /**
      * Returns a list of cameras by their string id.
