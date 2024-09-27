@@ -31,6 +31,7 @@ class ContactPreference(
         summaryProvider = SummaryProvider<ContactPreference> {
             if (it.isChecked) {
                 getPersistedContact(null)?.let { contactUri ->
+                    // TODO: get name from contact
                     context.resources.getString(R.string.summary_emergency_contact_on_with_contact, contactUri)
                 } ?: context.resources.getString(R.string.summary_emergency_contact_on_no_contact)
             } else {
