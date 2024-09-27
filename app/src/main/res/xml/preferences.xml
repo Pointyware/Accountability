@@ -59,6 +59,7 @@
         <org.pointyware.accountability.contact.ContactPreference
             android:icon="@drawable/ic_contact_pref"
             android:key="@string/pCallingContact"
+            app:contactKey="@string/pCallingNumber"
             android:summary="@string/summary_emergency_contact"
             android:title="@string/title_emergency_contact"
             app:permission="android.permission.READ_CONTACTS"/>
