@@ -110,8 +110,11 @@ class SettingsFragment: PreferenceFragmentCompat() {
                         storagePreference.value = StorageLocation.Internal.name
                     }
                 }
-                Manifest.permission.CALL_PHONE -> {
+                Manifest.permission.READ_CONTACTS -> {
                     contactPreference.permissionGranted(result)
+                }
+                Manifest.permission.CALL_PHONE -> {
+                    callOnStartPreference.isChecked = result
                 }
             }
         }

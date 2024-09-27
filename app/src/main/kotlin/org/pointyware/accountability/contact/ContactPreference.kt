@@ -23,12 +23,6 @@ class ContactPreference(
     attrs: AttributeSet
 ): PermissionPreference(context, attrs), PickNumberResultCallback.ContactReceiver {
 
-    companion object {
-        fun numberKeyFromRoot(key: String): String {
-            return "$key:uri"
-        }
-    }
-
     var contactKey: String? = null
         private set
     var contactLauncher: ActivityResultLauncher<Unit>? = null
@@ -68,10 +62,7 @@ class ContactPreference(
 
     override fun onContactSelected(uri: Uri?) {
         Timber.i("contact: $uri")
-        preferenceManager.sharedPreferences?.edit {
-            putString(numberKeyFromRoot(key), uri.toString())
-            apply()
-        }
+        persistContact(uri)
     }
 
 
