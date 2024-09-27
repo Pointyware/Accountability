@@ -92,7 +92,7 @@ class ContactPreference(
      * @see getPersistedBoolean
      */
     protected fun getPersistedContact(defaultReturnValue: Uri?): Uri? {
-        if (shouldPersist()) {
+        if (!shouldPersist()) {
             return defaultReturnValue
         }
 
