@@ -70,7 +70,12 @@ class SettingsFragment: PreferenceFragmentCompat() {
 
         storagePreference = findPreference(resources.getString(R.string.pStorageLocation))!!
 
-        arrayOf(isCameraEnabledPreference, isAudioEnabledPreference, contactPreference).forEach {
+        arrayOf(
+            isAudioEnabledPreference,
+            isCameraEnabledPreference,
+            contactPreference,
+            callOnStartPreference
+        ).forEach {
             it.launcher = requestPermissionLauncher
         }
 
